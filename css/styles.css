@@ -649,30 +649,6 @@ ul { list-style: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 899px) {
-  .hero-content {
-    padding: 3.5rem 0 0;
-  }
-  .hero-text {
-    padding-bottom: 2.5rem;
-  }
-  .hero-services-row {
-    flex-wrap: wrap;
-  }
-  .hero-service-link {
-    flex: 1 1 50%;
-    padding: 1rem 0.75rem;
-    font-size: 0.8125rem;
-  }
-  .hero-service-link:nth-child(2) {
-    border-right: none;
-  }
-  .hero-service-link:nth-child(1),
-  .hero-service-link:nth-child(2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-}
-
 /* ============================================
    PAGE HERO (inner pages)
    ============================================ */
@@ -2028,263 +2004,301 @@ ul { list-style: none; }
 .cool-tint { background-image: linear-gradient(135deg, rgba(27, 41, 86, 0.03), transparent); }
 
 /* ============================================
-   RESPONSIVE — TOP BAR MOBILE HIDE
+   RESPONSIVE — MOBILE-FIRST OVERHAUL
    ============================================ */
+
+/* --- Hide top bar on all phones/tablets --- */
 @media (max-width: 767px) {
   .top-bar { display: none !important; }
 }
 
 /* ============================================
-   RESPONSIVE — SMALL PHONES (max 480px)
+   ALL PHONES (max 899px)
    ============================================ */
-@media (max-width: 480px) {
-  :root { --nav-h: 64px; }
+@media (max-width: 899px) {
 
-  .container { padding: 0 1.25rem; }
-  .section-padding { padding: 3rem 0; }
-
-  /* Nav */
-  .nav-logo img { height: 38px; }
-  .nav-wrap.scrolled .nav-logo img { height: 34px; }
-
-  /* Buttons */
-  .btn { padding: 0.75rem 1.5rem; font-size: 0.8125rem; }
-
-  /* Hero */
-  .hero { min-height: auto; padding-bottom: 0; }
-  .hero .container { padding: 0 1.5rem; }
-  .hero-content { padding: 2.5rem 0 0; }
-  .hero-text { padding-bottom: 2rem; }
-  .hero h1 { font-size: 1.75rem; margin-bottom: 1rem; }
-  .hero-subtitle { font-size: 0.9375rem; margin-bottom: 1.5rem; line-height: 1.65; }
-  .hero-label { font-size: 0.6875rem; letter-spacing: 0.12em; margin-bottom: 1rem; }
-  .hero-credential { font-size: 0.6875rem; }
-  .hero-actions { gap: 0.625rem; }
-  .hero-service-link { padding: 0.875rem 0.5rem; font-size: 0.75rem; gap: 0.4rem; }
-  .hero-service-link i { font-size: 0.75rem; }
-
-  /* Page hero */
-  .page-hero { padding: 2.5rem 0 2rem; }
-  .page-hero h1 { font-size: 1.75rem; }
-
-  /* Section headings */
-  .section-heading { margin-bottom: 2rem; }
-  .section-heading h2 { font-size: 1.5rem; }
-  .section-heading p { font-size: 0.9375rem; }
-  .section-heading--left { margin-bottom: 1.75rem; }
-  .section-heading--left h2 { font-size: 1.5rem; }
-
-  /* Service tiles */
-  .service-tile { padding: 1.75rem 1.25rem; min-height: auto; }
-  .service-tile h3 { font-size: 1.125rem; }
-  .service-tile > p { font-size: 0.875rem; margin-bottom: 1.25rem; }
-
-  /* Service highlights */
-  .service-highlight { padding: 1.25rem; gap: 1rem; flex-wrap: wrap; }
-  .service-highlight > i { width: 40px; height: 40px; font-size: 1.125rem; }
-  .service-highlight h3 { font-size: 0.9375rem; }
-  .service-highlight p { font-size: 0.75rem; }
-  .service-highlight .service-tile-arrow { width: 32px; height: 32px; }
-
-  /* Why strip */
-  .why-strip { gap: 1.25rem; }
-  .why-strip-item h3 { font-size: 0.9375rem; }
-  .why-strip-item p { font-size: 0.8125rem; }
-
-  /* Stats bar */
-  .stats-bar { padding: 2rem 0; }
-  .stats-bar .container,
-  .stats-grid { gap: 1.25rem; }
-  .stat-item .stat-number { font-size: 2rem; }
-  .stat-item .stat-label { font-size: 0.625rem; letter-spacing: 0.1em; }
-
-  /* Photo break */
-  .photo-break { height: 200px; }
-
-  /* Testimonial */
-  .testimonial-section { padding: 3rem 0; }
-  .testimonial-section blockquote,
-  .testimonial-card blockquote { font-size: 1.0625rem; padding-left: 1rem; }
-  .testimonial-section .stars,
-  .testimonial-stars { font-size: 0.9375rem; margin-bottom: 1.25rem; }
-
-  /* Lead form */
-  .lead-band { padding: 3rem 0; }
-  .lead-band h2 { font-size: 1.375rem; }
-  .lead-band p { font-size: 0.875rem; }
-
-  /* Plans */
-  .plan-card { padding: 2rem 1.25rem; }
-  .plan-card h3 { font-size: 1.125rem; }
-  .plan-card ul li { font-size: 0.8125rem; }
-
-  /* Service detail items */
-  .service-detail-item { padding: 1.25rem; gap: 0.75rem; }
-  .service-detail-item h4 { font-size: 0.875rem; }
-  .service-detail-item p { font-size: 0.75rem; }
-
-  /* FAQ */
-  .faq-question { font-size: 0.9375rem; padding: 1rem 0; }
-  .faq-answer-inner { font-size: 0.875rem; }
-
-  /* Benefits/values */
-  .benefit-card { padding: 1.5rem 1.25rem; }
-  .benefit-card h3 { font-size: 1rem; }
-  .benefit-card p { font-size: 0.8125rem; }
-  .value-card { padding: 1.75rem 1.25rem; }
-
-  /* Steps */
-  .step-card { padding: 1rem; }
-  .step-number { width: 44px; height: 44px; font-size: 1.125rem; }
-
-  /* Info box */
-  .info-box { padding: 1.5rem; }
-  .info-box h3 { font-size: 1.125rem; }
-
-  /* Partnership box */
-  .partnership-box { padding: 1.5rem; gap: 0.75rem; }
-
-  /* CTA band */
-  .cta-band { padding: 3rem 0; }
-  .cta-band h2 { font-size: 1.375rem; }
-  .cta-band p { font-size: 0.875rem; margin-bottom: 1.5rem; }
-
-  /* Footer */
-  .footer-grid { padding: 2.5rem 0 2rem; gap: 2rem; }
-  .footer-brand p { font-size: 0.75rem; }
-  .footer-col h4 { font-size: 0.75rem; margin-bottom: 0.75rem; }
-  .footer-col ul li a { font-size: 0.75rem; }
-  .footer-col .contact-item { font-size: 0.75rem; }
-  .footer-bottom { padding: 1rem 0; font-size: 0.6875rem; }
-
-  /* Marquee */
-  .marquee-section { padding: 1.75rem 0; }
-  .marquee-label { font-size: 0.625rem; margin-bottom: 1.25rem; }
-  .marquee-track { gap: 3rem; }
-  .marquee-track img { height: 36px; }
-  .marquee {
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
-  }
-
-  /* Two-col */
-  .two-col { gap: 2rem; }
-
-  /* Area tags */
-  .area-tag { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
-
-  /* Prose */
-  .prose p { font-size: 0.9375rem; line-height: 1.7; }
-
-  /* Map */
-  .map-wrap iframe { height: 220px; }
-
-  /* Mobile call bar */
-  .mobile-call-bar a { font-size: 0.875rem; padding: 0.75rem; min-height: 50px; }
-}
-
-/* ============================================
-   RESPONSIVE — PHONES (max 767px, min 481px)
-   ============================================ */
-@media (min-width: 481px) and (max-width: 767px) {
+  /* --- Global spacing --- */
   .section-padding { padding: 3.5rem 0; }
 
-  .hero { min-height: auto; }
-  .hero-content { padding: 3rem 0 0; }
-  .hero h1 { font-size: 2.25rem; }
-  .hero-actions .btn { min-width: 180px; }
+  /* --- Nav tighten --- */
+  :root { --nav-h: 66px; }
+  .nav-logo img { height: 40px; }
+  .nav-wrap.scrolled .nav-logo img { height: 36px; }
 
+  /* --- HERO — compact, punchy --- */
+  .hero {
+    min-height: auto;
+  }
+  .hero-content {
+    padding: 2.5rem 0 0;
+  }
+  .hero-text {
+    padding-bottom: 1.75rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.625rem, 7vw, 2.375rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.12;
+  }
+  .hero-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.875rem;
+  }
+  .hero-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero-credential {
+    font-size: 0.6875rem;
+    margin-top: 1rem;
+  }
+
+  /* Hero buttons — side by side, compact */
+  .hero-actions {
+    gap: 0.5rem;
+  }
+  .hero-actions .btn {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Hero service links — tighter row */
+  .hero-services-row {
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+  .hero-service-link {
+    flex: 1 1 50%;
+    padding: 0.875rem 0.5rem;
+    font-size: 0.75rem;
+    gap: 0.4rem;
+  }
+  .hero-service-link i { font-size: 0.75rem; }
+  .hero-service-link:nth-child(2) { border-right: none; }
+  .hero-service-link:nth-child(1),
+  .hero-service-link:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* --- Page hero (inner pages) --- */
+  .page-hero { padding: 2.25rem 0 1.75rem; }
+  .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2.25rem); }
+
+  /* --- Section headings --- */
+  .section-heading { margin-bottom: 2rem; }
+  .section-heading h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+  .section-heading p { font-size: 0.875rem; line-height: 1.6; }
+  .section-heading--left { margin-bottom: 1.75rem; }
+  .section-heading--left h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+
+  /* --- Service tiles (home page grid) --- */
+  .service-tile {
+    padding: 1.5rem 1.25rem;
+    min-height: auto;
+  }
+  .service-tile h3 { font-size: 1.0625rem; margin-bottom: 0.5rem; }
+  .service-tile > p { font-size: 0.8125rem; margin-bottom: 1rem; line-height: 1.55; }
+  .service-tile-arrow { width: 30px; height: 30px; font-size: 0.625rem; }
+
+  /* --- Service highlight cards --- */
+  .service-highlight {
+    padding: 1.125rem 1rem;
+    gap: 0.75rem;
+  }
+  .service-highlight > i {
+    width: 38px; height: 38px; font-size: 1rem;
+  }
+  .service-highlight h3 { font-size: 0.9375rem; }
+  .service-highlight p { font-size: 0.75rem; line-height: 1.5; }
+  .service-highlight .service-tile-arrow { width: 28px; height: 28px; font-size: 0.5625rem; }
+  .services-bottom-row { margin-top: 0.75rem; gap: 0.75rem; }
+
+  /* --- Why strip --- */
+  .why-strip { gap: 0; }
+  .why-strip-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--warm-200);
+  }
+  .why-strip-item:last-child { border-bottom: none; }
+  .why-strip-item h3 { font-size: 0.9375rem; margin-bottom: 0.25rem; }
+  .why-strip-item p { font-size: 0.8125rem; line-height: 1.55; }
+
+  /* --- Stats bar --- */
+  .stats-bar { padding: 2rem 0; }
   .stats-bar .container,
-  .stats-grid { gap: 1.5rem; }
-  .stat-item .stat-number { font-size: 2.25rem; }
+  .stats-grid { gap: 1rem; }
+  .stat-item .stat-number { font-size: 2rem; margin-bottom: 0.25rem; }
+  .stat-item .stat-label { font-size: 0.5625rem; letter-spacing: 0.1em; }
 
-  .photo-break { height: 250px; }
+  /* --- Photo break --- */
+  .photo-break { height: 200px; }
 
-  .marquee-track { gap: 3.5rem; }
-  .marquee-track img { height: 42px; }
+  /* --- Testimonial --- */
+  .testimonial-section { padding: 2.5rem 0; }
+  .testimonial-section .stars,
+  .testimonial-stars { font-size: 0.875rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .testimonial-section blockquote,
+  .testimonial-card blockquote {
+    font-size: 1rem;
+    padding-left: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .testimonial-section cite,
+  .testimonial-card cite { font-size: 0.8125rem; }
+
+  /* --- Lead form band --- */
+  .lead-band { padding: 2.5rem 0; }
+  .lead-band h2 { font-size: clamp(1.25rem, 5vw, 1.625rem); margin-bottom: 0.375rem; }
+  .lead-band p { font-size: 0.8125rem; margin-bottom: 1.25rem; }
+  .lead-form { gap: 0.5rem; }
+  .lead-form input,
+  .lead-form select {
+    font-size: 1rem;
+    padding: 0.75rem 0.875rem;
+  }
+  .lead-form .btn { padding: 0.75rem 1.25rem; }
+
+  /* --- CTA band --- */
+  .cta-band { padding: 2.5rem 0; }
+  .cta-band h2 { font-size: clamp(1.25rem, 5vw, 1.625rem); }
+  .cta-band p { font-size: 0.8125rem; margin-bottom: 1.25rem; }
+  .cta-band .btn + .btn { margin-left: 0; }
+
+  /* --- Plan cards --- */
+  .plan-card { padding: 1.75rem 1.25rem; }
+  .plan-card .plan-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
+  .plan-card h3 { font-size: 1.125rem; }
+  .plan-card ul { margin-bottom: 1.25rem; }
+  .plan-card ul li { font-size: 0.8125rem; padding: 0.3rem 0; }
+
+  /* --- Service detail grid --- */
+  .service-detail-item { padding: 1.125rem; gap: 0.625rem; }
+  .service-detail-item i { font-size: 1rem; }
+  .service-detail-item h4 { font-size: 0.875rem; }
+  .service-detail-item p { font-size: 0.75rem; line-height: 1.55; }
+
+  /* --- FAQ --- */
+  .faq-question { font-size: 0.9375rem; padding: 1rem 0; }
+  .faq-answer-inner { font-size: 0.8125rem; padding-bottom: 1rem; }
+
+  /* --- Benefits / values --- */
+  .benefit-card { padding: 1.5rem 1.25rem; }
+  .benefit-card i { font-size: 1.375rem; margin-bottom: 0.75rem; }
+  .benefit-card h3 { font-size: 1rem; }
+  .benefit-card p { font-size: 0.8125rem; }
+  .value-card { padding: 1.5rem 1.25rem; }
+  .value-card h3 { font-size: 1rem; }
+  .value-card p { font-size: 0.8125rem; }
+
+  /* --- Steps --- */
+  .step-card { padding: 1rem 0.5rem; }
+  .step-number { width: 44px; height: 44px; font-size: 1.125rem; margin-bottom: 1rem; }
+  .step-card h3 { font-size: 1rem; }
+  .step-card p { font-size: 0.8125rem; }
+
+  /* --- Info box --- */
+  .info-box { padding: 1.5rem; }
+  .info-box h3 { font-size: 1.125rem; }
+  .info-box p { font-size: 0.875rem; }
+  .info-box table { font-size: 0.875rem; }
+
+  /* --- Partnership box --- */
+  .partnership-box { padding: 1.25rem; gap: 0.75rem; }
+  .partnership-box p { font-size: 0.8125rem; }
+
+  /* --- Marquee --- */
+  .marquee-section { padding: 1.5rem 0; }
+  .marquee-label { font-size: 0.5625rem; margin-bottom: 1rem; letter-spacing: 0.18em; }
+  .marquee-track { gap: 2.5rem; }
+  .marquee-track img { height: 36px; }
+  .marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+  }
+
+  /* --- Two-col --- */
+  .two-col { gap: 2rem; }
+
+  /* --- Area tags --- */
+  .area-tag { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+
+  /* --- Prose --- */
+  .prose p { font-size: 0.9375rem; line-height: 1.7; }
+
+  /* --- Map --- */
+  .map-wrap iframe { height: 240px; }
+
+  /* --- Footer --- */
+  .footer-grid { padding: 2.5rem 0 2rem; gap: 1.75rem; }
+  .footer-brand img { height: 36px; }
+  .footer-brand p { font-size: 0.75rem; line-height: 1.6; margin-bottom: 0.875rem; }
+  .footer-col h4 { font-size: 0.6875rem; margin-bottom: 0.625rem; }
+  .footer-col ul li { margin-bottom: 0.375rem; }
+  .footer-col ul li a { font-size: 0.75rem; }
+  .footer-col .contact-item { font-size: 0.75rem; margin-bottom: 0.625rem; }
+  .footer-bottom { padding: 1rem 0; font-size: 0.6875rem; }
+
+  /* --- Breadcrumb --- */
+  .breadcrumb { font-size: 0.75rem; }
+
+  /* --- Form inputs (prevent iOS zoom) --- */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  /* --- Service page images --- */
+  .service-overview-img img { min-height: 200px; }
+  .about-photo-wrap img { min-height: 200px; }
+  .about-logo-wrap img { max-width: 240px; padding: 1.5rem; }
 }
 
 /* ============================================
-   RESPONSIVE — TABLET PORTRAIT (600px - 767px)
+   TABLET PORTRAIT (600px - 767px)
    ============================================ */
 @media (min-width: 600px) and (max-width: 767px) {
-  /* Benefits/service grids get 2-column earlier */
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .service-detail-grid { grid-template-columns: repeat(2, 1fr); }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Footer starts as 2-col */
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ============================================
-   RESPONSIVE — TABLET (768px - 1023px)
+   TABLET (768px - 1023px)
    ============================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Why strip - 2x2 instead of 4 */
   .why-strip { grid-template-columns: repeat(2, 1fr); }
   .why-strip-item { padding: 0.5rem 1.5rem; }
   .why-strip-item:nth-child(odd) { padding-left: 0; border-left: none; }
 
-  /* Footer 2x2 grid */
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 
-  /* Plans grid on tablet - show featured card first or keep side by side */
   .plans-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
   .plans-grid .plan-card.featured { grid-column: 1 / -1; max-width: 480px; justify-self: center; }
 
-  /* Service card grid */
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Two-col on tablet */
   .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 /* ============================================
-   RESPONSIVE — ALL MOBILE (max 899px)
-   ============================================ */
-@media (max-width: 899px) {
-  /* Ensure hero buttons stack nicely */
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hero-actions .btn {
-    text-align: center;
-    justify-content: center;
-    min-width: 220px;
-  }
-
-  /* More breathing room in full-width dark sections */
-  .hero .container { padding: 0 1.75rem; }
-  .lead-band .container { padding: 0 1.75rem; }
-  .cta-band .container { padding: 0 1.75rem; }
-  .stats-bar .container { padding: 0 1.75rem; }
-  .page-hero .container { padding: 0 1.75rem; }
-  .testimonial-section .container { padding: 0 1.75rem; }
-}
-
-/* ============================================
-   RESPONSIVE — CTA BAND BUTTONS FIX
-   ============================================ */
-@media (max-width: 480px) {
-  .cta-band .btn + .btn { margin-left: 0; }
-}
-
-/* ============================================
-   RESPONSIVE — CONTACT PAGE HELPERS
+   CONTACT PAGE HELPERS
    ============================================ */
 .contact-form-wrap {
   background: #fff;
   border: 2px solid var(--warm-200);
   padding: 2.5rem;
 }
-@media (max-width: 480px) {
+@media (max-width: 899px) {
   .contact-form-wrap { padding: 1.5rem; }
-}
-@media (min-width: 481px) and (max-width: 767px) {
-  .contact-form-wrap { padding: 2rem; }
 }
 
 .contact-detail-row {
@@ -2323,7 +2337,7 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   RESPONSIVE — ABOUT PAGE PARTNERSHIP GRID
+   ABOUT PAGE PARTNERSHIP GRID
    ============================================ */
 .partnerships-stack {
   display: grid;
@@ -2334,82 +2348,20 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   RESPONSIVE — DESKTOP POLISH (1024px+)
+   DESKTOP POLISH (1024px+)
    ============================================ */
 @media (min-width: 1024px) {
-  /* Tighter desktop grid gaps */
   .services-grid-v2 { border-radius: 2px; }
-
-  /* Better nav spacing */
   .nav-links { gap: 0.25rem; }
-
-  /* Footer full 4-col with brand spanning nicely */
   .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.25fr; }
-
-  /* Service highlight hover enhancement */
   .service-highlight:hover { transform: translateY(-2px); }
-
-  /* Photo break taller on large screens */
   .photo-break { height: 420px; }
 }
 
 @media (min-width: 1200px) {
   .photo-break { height: 480px; }
-
-  /* Wider hero */
   .hero-text { max-width: 600px; }
   .hero h1 { letter-spacing: -0.025em; }
-}
-
-/* ============================================
-   RESPONSIVE — FORM INPUTS MOBILE
-   ============================================ */
-@media (max-width: 767px) {
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    font-size: 1rem;
-    padding: 0.875rem 1rem;
-  }
-  .lead-form input,
-  .lead-form select {
-    font-size: 1rem;
-    padding: 0.875rem 1rem;
-  }
-  .lead-form { gap: 0.625rem; }
-  .lead-form .btn { padding: 0.875rem 1.5rem; }
-}
-
-/* ============================================
-   RESPONSIVE — SERVICE PAGE OVERVIEW
-   ============================================ */
-@media (max-width: 767px) {
-  .service-overview-img img { min-height: 200px; }
-  .about-photo-wrap img { min-height: 220px; }
-  .about-logo-wrap img { max-width: 240px; padding: 1.5rem; }
-}
-
-/* ============================================
-   RESPONSIVE — BREADCRUMB MOBILE
-   ============================================ */
-@media (max-width: 480px) {
-  .breadcrumb { font-size: 0.75rem; }
-  .breadcrumb .sep { font-size: 0.5rem; }
-}
-
-/* ============================================
-   RESPONSIVE — INFO BOX TABLE MOBILE
-   ============================================ */
-@media (max-width: 480px) {
-  .info-box table { font-size: 0.8125rem; }
-  .info-box table td { padding: 0.375rem 0; }
-}
-
-/* ============================================
-   RESPONSIVE — CONTACT TWO-COL TABLET
-   ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .two-col { gap: 2rem; }
 }
 
 /* Dividers (kept for compatibility) */
