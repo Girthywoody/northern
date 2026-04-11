@@ -2025,63 +2025,70 @@ ul { list-style: none; }
   .nav-logo img { height: 40px; }
   .nav-wrap.scrolled .nav-logo img { height: 36px; }
 
-  /* --- HERO — compact, punchy --- */
+  /* --- HERO — redesigned for mobile --- */
   .hero {
     min-height: auto;
+    align-items: flex-start;
   }
   .hero-content {
-    padding: 2.5rem 0 0;
+    padding: 2rem 0 0;
   }
   .hero-text {
-    padding-bottom: 1.75rem;
+    padding-bottom: 0;
   }
   .hero h1 {
-    font-size: clamp(1.625rem, 7vw, 2.375rem);
-    margin-bottom: 0.75rem;
-    line-height: 1.12;
+    font-size: clamp(1.75rem, 7.5vw, 2.5rem);
+    margin-bottom: 0.625rem;
+    line-height: 1.1;
   }
   .hero-label {
-    font-size: 0.625rem;
-    letter-spacing: 0.14em;
-    margin-bottom: 0.875rem;
+    font-size: 0.5625rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.75rem;
+  }
+  .hero-label::before {
+    width: 16px;
   }
   .hero-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     margin-bottom: 1.25rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.45);
-  }
-  .hero-credential {
-    font-size: 0.6875rem;
-    margin-top: 1rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.4);
   }
 
-  /* Hero buttons — side by side, compact */
+  /* Credential — tuck under buttons */
+  .hero-credential {
+    font-size: 0.625rem;
+    margin-top: 0.75rem;
+    padding-bottom: 1.25rem;
+  }
+
+  /* Hero buttons — compact side by side */
   .hero-actions {
     gap: 0.5rem;
   }
   .hero-actions .btn {
-    padding: 0.7rem 1.25rem;
-    font-size: 0.75rem;
+    padding: 0.625rem 1.125rem;
+    font-size: 0.6875rem;
     letter-spacing: 0.03em;
   }
 
-  /* Hero service links — tighter row */
+  /* Hero service links — tight single strip */
   .hero-services-row {
     flex-wrap: wrap;
-    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .hero-service-link {
     flex: 1 1 50%;
-    padding: 0.875rem 0.5rem;
-    font-size: 0.75rem;
-    gap: 0.4rem;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.6875rem;
+    gap: 0.35rem;
   }
-  .hero-service-link i { font-size: 0.75rem; }
+  .hero-service-link i { font-size: 0.625rem; }
   .hero-service-link:nth-child(2) { border-right: none; }
   .hero-service-link:nth-child(1),
   .hero-service-link:nth-child(2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* --- Page hero (inner pages) --- */
