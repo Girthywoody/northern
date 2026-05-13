@@ -4,8 +4,8 @@
   "description": "Heating, Cooling, Fireplaces & Plumbing in Greater Sudbury, ON",
   "start_url": "/",
   "display": "browser",
-  "theme_color": "#1A1E2E",
-  "background_color": "#F0EDEA",
+  "theme_color": "#2E3852",
+  "background_color": "#FAF8F4",
   "icons": [
     { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
     { "src": "/apple-touch-icon.svg", "type": "image/svg+xml", "sizes": "180x180" }

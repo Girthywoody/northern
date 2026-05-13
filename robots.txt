@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 Disallow: /thank-you.html
+Disallow: /services/plumbing.html
 
 Sitemap: https://northernclimatesudbury.com/sitemap.xml
