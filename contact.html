@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Northern Climate — Heating & Cooling in Sudbury, ON</title>
+    <meta name="theme-color" content="#1A1E2E">
+    <title>Contact Us | Northern Climate — Heating &amp; Cooling in Sudbury, ON</title>
     <meta name="description" content="Contact Northern Climate for heating, cooling, and fireplace services in Greater Sudbury. Call (705) 586-4300 or fill out our online form for a free quote.">
+    <link rel="canonical" href="https://northernclimatesudbury.com/contact.html">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+    <link rel="mask-icon" href="favicon-mask.svg" color="#C42B2B">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Contact Us | Northern Climate — Heating & Cooling in Sudbury, ON">
-    <meta property="og:description" content="Contact Northern Climate for heating, cooling, and fireplace services in Greater Sudbury. Call (705) 586-4300 or fill out our online form for a free quote.">
+    <meta property="og:title" content="Contact Us | Northern Climate — Heating &amp; Cooling in Sudbury, ON">
+    <meta property="og:description" content="Call (705) 586-4300 or fill out our online form for a free quote on furnace, AC, fireplace, or plumbing service in Greater Sudbury.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Northern Climate">
+    <meta property="og:url" content="https://northernclimatesudbury.com/contact.html">
+    <meta property="og:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+    <meta property="og:image:alt" content="Northern Climate — Contact us in Greater Sudbury">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Northern Climate — Sudbury HVAC">
+    <meta name="twitter:description" content="Call (705) 586-4300 or fill out the form for a free quote.">
+    <meta name="twitter:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- JSON-LD: HVACBusiness -->
     <script type="application/ld+json">
@@ -71,8 +94,21 @@
 
     <!-- Site JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- Google Analytics 4 — TODO: replace G-XXXXXXXXXX with your Measurement ID, then uncomment. -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+    -->
 </head>
 <body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- Top Info Bar -->
     <div class="top-bar" id="topBar">
@@ -145,6 +181,8 @@
         </div>
     </nav>
 
+    <main id="main">
+
     <!-- Page Hero -->
     <section class="page-hero has-grain">
         <div class="container">
@@ -167,7 +205,8 @@
                     <h2 style="margin-bottom: 0.5rem;">Send Us a Message</h2>
                     <p style="color: var(--warm-500); margin-bottom: 2rem; font-size: 0.9375rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
 
-                    <form id="contactForm">
+                    <form id="contactForm" novalidate>
+                        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-row" style="margin-bottom: 1.25rem;">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
@@ -213,6 +252,7 @@
                         <button type="submit" class="btn btn-red" style="width: 100%;">
                             <i class="fas fa-paper-plane"></i> Send Request
                         </button>
+                        <div class="form-error" role="alert" aria-live="polite"></div>
                     </form>
 
                     <div class="form-success" id="formSuccess">
@@ -292,6 +332,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -301,7 +343,7 @@
                     <img src="Northern Climate logo (1).png" alt="Northern Climate Logo">
                     <p>Northern Climate is Sudbury's trusted choice for heating, cooling, fireplaces, water heaters, and plumbing. Authorized Bryant dealer.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/NorthernClimateSudbury" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.facebook.com/NorthernClimateSudbury" target="_blank" rel="noopener noreferrer" aria-label="Northern Climate on Facebook (opens in new tab)"><i class="fab fa-facebook-square"></i></a>
                     </div>
                 </div>
 
@@ -341,7 +383,13 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span class="js-year"></span> Northern Climate. All rights reserved.</p>
-                <p>Serving Greater Sudbury &amp; Area</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy</a>
+                    <span class="sep">·</span>
+                    <a href="terms.html">Terms</a>
+                    <span class="sep">·</span>
+                    <span>Serving Greater Sudbury &amp; Area</span>
+                </div>
             </div>
         </div>
     </footer>

@@ -2,11 +2,25 @@
    Northern Climate - Main JS
    =========================== */
 
+/*
+ * EmailJS configuration (optional)
+ * --------------------------------
+ * 1. Sign up at https://www.emailjs.com (free tier: 200 emails/month).
+ * 2. Add an email service and two templates (one for the contact form, one
+ *    for the homepage lead form). EmailJS will display the IDs.
+ * 3. Add your domain to the EmailJS Allowed Origins list to prevent abuse.
+ * 4. Paste the IDs below — leave any field blank to fall back to mailto.
+ */
+var EMAILJS_PUBLIC_KEY        = '';
+var EMAILJS_SERVICE_ID        = '';
+var EMAILJS_CONTACT_TEMPLATE  = '';
+var EMAILJS_LEAD_TEMPLATE     = '';
+
 (function () {
   'use strict';
 
   /* ---------- Sticky Nav Shadow ---------- */
-  const navWrap = document.querySelector('.nav-wrap');
+  var navWrap = document.querySelector('.nav-wrap');
   if (navWrap) {
     window.addEventListener('scroll', function () {
       navWrap.classList.toggle('scrolled', window.scrollY > 10);
@@ -14,27 +28,30 @@
   }
 
   /* ---------- Mobile Menu ---------- */
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  var hamburger = document.querySelector('.hamburger');
+  var mobileMenu = document.querySelector('.mobile-menu');
 
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', function () {
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('open');
+      var expanded = hamburger.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     });
 
-    // Close on link click
+    // Close on link click (but not the services toggle)
     mobileMenu.querySelectorAll('a:not(.mobile-services-toggle)').forEach(function (link) {
       link.addEventListener('click', function () {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
   /* ---------- Mobile Services Accordion ---------- */
-  const servicesToggle = document.querySelector('.mobile-services-toggle');
-  const mobileSubmenu = document.querySelector('.mobile-submenu');
+  var servicesToggle = document.querySelector('.mobile-services-toggle');
+  var mobileSubmenu = document.querySelector('.mobile-submenu');
 
   if (servicesToggle && mobileSubmenu) {
     servicesToggle.addEventListener('click', function (e) {
@@ -45,11 +62,11 @@
   }
 
   /* ---------- Desktop Dropdown (click support for touch) ---------- */
-  const dropdown = document.querySelector('.nav-dropdown');
+  var dropdown = document.querySelector('.nav-dropdown');
   if (dropdown) {
     dropdown.addEventListener('click', function (e) {
       if (window.innerWidth < 1024) return;
-      const toggle = e.target.closest('.nav-dropdown-toggle');
+      var toggle = e.target.closest('.nav-dropdown-toggle');
       if (toggle) {
         e.preventDefault();
         dropdown.classList.toggle('open');
@@ -64,8 +81,7 @@
   }
 
   /* ---------- Footer Year ---------- */
-  var yearEls = document.querySelectorAll('.js-year');
-  yearEls.forEach(function (el) {
+  document.querySelectorAll('.js-year').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
 
@@ -73,19 +89,17 @@
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!prefersReduced && 'IntersectionObserver' in window) {
-    var fadeEls = document.querySelectorAll('.fade-in');
-    var observer = new IntersectionObserver(function (entries) {
+    var fadeObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          fadeObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
 
-    fadeEls.forEach(function (el) { observer.observe(el); });
+    document.querySelectorAll('.fade-in').forEach(function (el) { fadeObserver.observe(el); });
   } else {
-    // Make everything visible immediately
     document.querySelectorAll('.fade-in').forEach(function (el) {
       el.classList.add('visible');
     });
@@ -97,13 +111,11 @@
     var suffix = el.getAttribute('data-suffix') || '';
     var prefix = el.getAttribute('data-prefix') || '';
     var duration = 2000;
-    var start = 0;
     var startTime = null;
 
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
       var progress = Math.min((timestamp - startTime) / duration, 1);
-      // Ease out quad
       var eased = 1 - (1 - progress) * (1 - progress);
       var current = Math.floor(eased * target);
       el.textContent = prefix + current.toLocaleString() + suffix;
@@ -118,7 +130,6 @@
   }
 
   if (!prefersReduced && 'IntersectionObserver' in window) {
-    var counterEls = document.querySelectorAll('[data-count]');
     var counterObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -128,7 +139,7 @@
       });
     }, { threshold: 0.5 });
 
-    counterEls.forEach(function (el) { counterObserver.observe(el); });
+    document.querySelectorAll('[data-count]').forEach(function (el) { counterObserver.observe(el); });
   } else {
     document.querySelectorAll('[data-count]').forEach(function (el) {
       var target = parseInt(el.getAttribute('data-count'), 10);
@@ -145,19 +156,83 @@
       var answer = item.querySelector('.faq-answer');
       var isOpen = item.classList.contains('open');
 
-      // Close all
       document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
         openItem.classList.remove('open');
         openItem.querySelector('.faq-answer').style.maxHeight = '0';
       });
 
-      // Open clicked if it was closed
       if (!isOpen) {
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
   });
+
+  /* ---------- Scroll-to-top button ---------- */
+  var scrollTopBtn = document.createElement('button');
+  scrollTopBtn.type = 'button';
+  scrollTopBtn.className = 'scroll-top';
+  scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollTopBtn.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<polyline points="6 14 12 8 18 14"></polyline></svg>';
+  document.body.appendChild(scrollTopBtn);
+
+  window.addEventListener('scroll', function () {
+    scrollTopBtn.classList.toggle('scroll-top--visible', window.scrollY > 600);
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- EmailJS conditional load ---------- */
+  var EMAILJS_READY = false;
+  function loadEmailJS(cb) {
+    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID) { cb(false); return; }
+    if (window.emailjs) {
+      try { window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (e) {}
+      EMAILJS_READY = true; cb(true); return;
+    }
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    s.async = true;
+    s.onload = function () {
+      try { window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); EMAILJS_READY = true; cb(true); }
+      catch (e) { cb(false); }
+    };
+    s.onerror = function () { cb(false); };
+    document.head.appendChild(s);
+  }
+  if (EMAILJS_PUBLIC_KEY) loadEmailJS(function () {});
+
+  /* ---------- Form helpers ---------- */
+  function showFormError(form, message) {
+    var err = form.querySelector('.form-error');
+    if (err) {
+      err.innerHTML = '<i class="fas fa-exclamation-circle" aria-hidden="true"></i>' + message;
+      err.classList.add('show');
+    }
+  }
+  function hideFormError(form) {
+    var err = form.querySelector('.form-error');
+    if (err) err.classList.remove('show');
+  }
+  function sendMailto(form, subject) {
+    var formData = new FormData(form);
+    var body = '';
+    formData.forEach(function (value, key) {
+      if (key === '_gotcha') return;
+      body += key + ': ' + value + '\n';
+    });
+    var mailto = 'mailto:service@northernclimatesudbury.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
+  }
+  function honeypotTripped(form) {
+    var hp = form.querySelector('[name="_gotcha"]');
+    return hp && hp.value && hp.value.length > 0;
+  }
 
   /* ---------- Contact Form ---------- */
   var contactForm = document.getElementById('contactForm');
@@ -166,27 +241,34 @@
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      hideFormError(contactForm);
+      if (honeypotTripped(contactForm)) return; // silently drop spam
 
-      // Gather form data
-      var formData = new FormData(contactForm);
-      var subject = 'New Quote Request from ' + (formData.get('firstName') || '') + ' ' + (formData.get('lastName') || '');
-      var body = '';
-      formData.forEach(function (value, key) {
-        body += key + ': ' + value + '%0D%0A';
-      });
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
-      // Open mailto
-      window.location.href = 'mailto:service@northernclimatesudbury.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-
-      // Show success
-      contactForm.style.display = 'none';
-      if (formSuccess) {
-        formSuccess.classList.add('show');
-        setTimeout(function () {
-          contactForm.style.display = '';
+      function done(success) {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        if (success) {
           contactForm.reset();
-          formSuccess.classList.remove('show');
-        }, 5000);
+          if (formSuccess) formSuccess.classList.add('show');
+          setTimeout(function () { window.location.href = 'thank-you.html'; }, 1400);
+        }
+      }
+
+      if (EMAILJS_READY && EMAILJS_CONTACT_TEMPLATE) {
+        window.emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TEMPLATE, contactForm)
+          .then(function () { done(true); })
+          .catch(function () {
+            showFormError(contactForm, 'We couldn\'t send your message. Opening your email client as a backup.');
+            sendMailto(contactForm, 'Quote Request from ' + (contactForm.querySelector('[name="firstName"]') || {}).value);
+            done(false);
+          });
+      } else {
+        // No EmailJS configured — use mailto
+        sendMailto(contactForm, 'Quote Request from ' + ((contactForm.querySelector('[name="firstName"]') || {}).value || 'website'));
+        done(true);
       }
     });
   }
@@ -196,14 +278,33 @@
   if (leadForm) {
     leadForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var formData = new FormData(leadForm);
-      var subject = 'Quick Quote Request';
-      var body = '';
-      formData.forEach(function (value, key) {
-        body += key + ': ' + value + '%0D%0A';
-      });
-      window.location.href = 'mailto:service@northernclimatesudbury.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-      leadForm.reset();
+      hideFormError(leadForm);
+      if (honeypotTripped(leadForm)) return;
+
+      var submitBtn = leadForm.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      function done(success) {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        if (success) {
+          leadForm.reset();
+          setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
+        }
+      }
+
+      if (EMAILJS_READY && EMAILJS_LEAD_TEMPLATE) {
+        window.emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_LEAD_TEMPLATE, leadForm)
+          .then(function () { done(true); })
+          .catch(function () {
+            showFormError(leadForm, 'We couldn\'t send your request. Opening your email client as a backup.');
+            sendMailto(leadForm, 'Quick Quote Request');
+            done(false);
+          });
+      } else {
+        sendMailto(leadForm, 'Quick Quote Request');
+        done(true);
+      }
     });
   }
 

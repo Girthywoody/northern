@@ -1,2 +1,10 @@
 .DS_Store
 *.mp4
+*.log
+firebase-debug.log
+.firebase/
+.vercel/
+.netlify/
+node_modules/
+.env
+.env.local

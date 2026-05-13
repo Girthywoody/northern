@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1A1E2E">
     <title>About Us | Northern Climate — Sudbury's Trusted HVAC Experts</title>
     <meta name="description" content="Learn about Northern Climate — Greater Sudbury's trusted heating, cooling, and fireplace experts. Locally owned, licensed, and committed to your comfort.">
+    <link rel="canonical" href="https://northernclimatesudbury.com/about.html">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+    <link rel="mask-icon" href="favicon-mask.svg" color="#C42B2B">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Open Graph -->
     <meta property="og:title" content="About Us | Northern Climate — Sudbury's Trusted HVAC Experts">
     <meta property="og:description" content="Learn about Northern Climate — Greater Sudbury's trusted heating, cooling, and fireplace experts. Locally owned, licensed, and committed to your comfort.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Northern Climate">
+    <meta property="og:url" content="https://northernclimatesudbury.com/about.html">
+    <meta property="og:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+    <meta property="og:image:alt" content="Northern Climate — heating, cooling, fireplaces and plumbing in Greater Sudbury">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Northern Climate — Sudbury's Trusted HVAC Experts">
+    <meta name="twitter:description" content="Greater Sudbury's trusted heating, cooling, and fireplace experts. Locally owned, licensed, and Bryant-authorized.">
+    <meta name="twitter:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- JSON-LD: HVACBusiness -->
     <script type="application/ld+json">
@@ -81,8 +104,21 @@
 
     <!-- Site JS -->
     <script src="js/main.js" defer></script>
+
+    <!-- Google Analytics 4 — TODO: replace G-XXXXXXXXXX with your Measurement ID, then uncomment. -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+    </script>
+    -->
 </head>
 <body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- Top Info Bar -->
     <div class="top-bar" id="topBar">
@@ -155,6 +191,8 @@
         </div>
     </nav>
 
+    <main id="main">
+
     <!-- Page Hero -->
     <section class="page-hero has-grain">
         <div class="container">
@@ -179,6 +217,46 @@
                 </div>
                 <div class="fade-in about-photo-wrap">
                     <img src="images/home-interior.jpg" alt="Comfortable home interior kept warm by Northern Climate">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-heading section-heading--left">
+                <h2>How we work</h2>
+                <p>From the first call to the follow-up — what to expect when you bring us into your home.</p>
+            </div>
+            <div class="process-strip stagger-children">
+                <div class="process-step fade-in">
+                    <div class="process-num" aria-hidden="true">01</div>
+                    <div class="process-body">
+                        <h3>Free in-home assessment</h3>
+                        <p>We come on time, walk the home, listen carefully, and look at what's actually installed — not just what the brochure says.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-num" aria-hidden="true">02</div>
+                    <div class="process-body">
+                        <h3>Honest, written quote</h3>
+                        <p>Plain-language pricing on paper. We explain the options, we explain the trade-offs, and we don't upsell what you don't need.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-num" aria-hidden="true">03</div>
+                    <div class="process-body">
+                        <h3>Clean, on-schedule install</h3>
+                        <p>Floors covered, old equipment hauled away, work site left tidier than we found it. Most installs wrap up in a single day.</p>
+                    </div>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="process-num" aria-hidden="true">04</div>
+                    <div class="process-body">
+                        <h3>Follow-up &amp; maintenance</h3>
+                        <p>We check in after install and offer a Protection Plan so the system keeps running the way it should — for years, not just months.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -298,6 +376,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -307,7 +387,7 @@
                     <img src="Northern Climate logo (1).png" alt="Northern Climate Logo">
                     <p>Northern Climate is Sudbury's trusted choice for heating, cooling, fireplaces, water heaters, and plumbing. Authorized Bryant dealer.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/NorthernClimateSudbury" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.facebook.com/NorthernClimateSudbury" target="_blank" rel="noopener noreferrer" aria-label="Northern Climate on Facebook (opens in new tab)"><i class="fab fa-facebook-square"></i></a>
                     </div>
                 </div>
 
@@ -347,7 +427,13 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span class="js-year"></span> Northern Climate. All rights reserved.</p>
-                <p>Serving Greater Sudbury &amp; Area</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy</a>
+                    <span class="sep">·</span>
+                    <a href="terms.html">Terms</a>
+                    <span class="sep">·</span>
+                    <span>Serving Greater Sudbury &amp; Area</span>
+                </div>
             </div>
         </div>
     </footer>

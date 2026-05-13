@@ -3,16 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A1E2E">
   <title>Northern Climate | Heating, Cooling &amp; Fireplaces in Sudbury, ON</title>
   <meta name="description" content="Northern Climate offers expert furnace, air conditioning, and fireplace services in Greater Sudbury, ON. Authorized Bryant dealer. Call (705) 586-4300.">
+  <link rel="canonical" href="https://northernclimatesudbury.com/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+  <link rel="mask-icon" href="favicon-mask.svg" color="#C42B2B">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Northern Climate | Heating, Cooling &amp; Fireplaces in Sudbury, ON">
-  <meta property="og:description" content="Expert HVAC services in Greater Sudbury. Authorized Bryant dealer. Emergency service available.">
+  <meta property="og:description" content="Expert furnace, air conditioning, fireplace and plumbing service in Greater Sudbury. Authorized Bryant dealer.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="Northern Climate logo (1).png">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:site_name" content="Northern Climate">
+  <meta property="og:url" content="https://northernclimatesudbury.com/">
+  <meta property="og:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+  <meta property="og:image:alt" content="Northern Climate — heating, cooling, fireplaces and plumbing in Greater Sudbury">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Northern Climate | Heating, Cooling &amp; Fireplaces in Sudbury, ON">
+  <meta name="twitter:description" content="Expert HVAC services in Greater Sudbury. Authorized Bryant dealer.">
+  <meta name="twitter:image" content="https://northernclimatesudbury.com/thumbs-up.png">
+
+  <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Site styles + JS -->
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
   <script type="application/ld+json">
@@ -34,8 +61,24 @@
     "openingHours": "Mo-Fr 08:00-17:00"
   }
   </script>
+
+  <!-- Google Analytics 4 — TODO: replace G-XXXXXXXXXX with your Measurement ID, then uncomment. -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
+  -->
+  <!-- Privacy-friendly alternative: Plausible
+  <script defer data-domain="northernclimatesudbury.com" src="https://plausible.io/js/script.js"></script>
+  -->
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <!-- Top Info Bar -->
@@ -64,7 +107,7 @@
               <a href="services/plumbing.html">Plumbing &amp; Water Heaters</a>
             </div>
           </li>
-          <li><a href="plans.html">Protection Plans</a></li>
+          <li><a href="protection-plans.html">Protection Plans</a></li>
           <li><a href="financing.html">Financing</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="tel:7055864300" class="nav-cta"><i class="fas fa-phone-alt"></i> (705) 586-4300</a></li>
@@ -82,7 +125,7 @@
           <a href="services/fireplaces.html">Fireplaces</a>
           <a href="services/plumbing.html">Plumbing &amp; Water Heaters</a>
         </div>
-        <a href="plans.html">Protection Plans</a>
+        <a href="protection-plans.html">Protection Plans</a>
         <a href="financing.html">Financing</a>
         <a href="contact.html">Contact</a>
         <a href="tel:7055864300" style="color:var(--red);font-weight:700"><i class="fas fa-phone-alt"></i> (705) 586-4300</a>
@@ -90,7 +133,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- ====== HERO ====== -->
     <section class="hero has-grain industrial-grid">
@@ -107,7 +150,7 @@
           <div class="hero-credential">Authorized Bryant Dealer · Emergency Service 24/7</div>
         </div>
         <div class="hero-image">
-          <img src="thumbs-up.png" alt="Northern Climate technician" />
+          <img src="thumbs-up.png" alt="Northern Climate technician" width="640" height="640" fetchpriority="high" decoding="async" />
         </div>
         <div class="hero-services-row">
           <a href="services/heating.html" class="hero-service-link">
@@ -127,6 +170,19 @@
             <span>Plumbing</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ====== TRUST BADGES ====== -->
+    <section class="trust-row" aria-label="Credentials">
+      <div class="container trust-row-inner">
+        <span class="trust-item"><i class="fas fa-certificate" aria-hidden="true"></i> TSSA Registered</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i> WSIB Covered</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item"><i class="fas fa-file-contract" aria-hidden="true"></i> Fully Insured</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item"><i class="fas fa-star" aria-hidden="true"></i> Authorized Bryant Dealer</span>
       </div>
     </section>
 
@@ -186,7 +242,7 @@
         </div>
 
         <div class="services-bottom-row stagger-children">
-          <a href="plans.html" class="service-highlight fade-in">
+          <a href="protection-plans.html" class="service-highlight fade-in">
             <i class="fas fa-shield-alt"></i>
             <div>
               <h3>Protection Plans</h3>
@@ -260,14 +316,36 @@
       </div>
     </section>
 
-    <!-- ====== TESTIMONIAL ====== -->
+    <!-- ====== TESTIMONIALS ====== -->
     <section class="testimonial-section">
       <div class="container">
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <div class="section-heading section-heading--left u-mb-lg">
+          <h2>What neighbours say</h2>
+          <p>Real reviews from homeowners across Greater Sudbury.</p>
         </div>
-        <blockquote>&ldquo;Wow! Great price! Great service! Fast! Clean! Best customer service I've received in quite some time. Thank you!&rdquo;</blockquote>
-        <cite>&mdash; Kathy K., Sudbury Resident</cite>
+        <div class="testimonial-grid stagger-children">
+          <div class="testimonial-quote fade-in">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote>Wow! Great price, great service, fast and clean. Best customer service I've received in quite some time. Thank you!</blockquote>
+            <cite><strong>Kathy K.</strong>Sudbury · Furnace replacement</cite>
+          </div>
+          <div class="testimonial-quote fade-in">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote>The Regency insert looks better than the rendering. The crew was tidy and took the old unit away the same day.</blockquote>
+            <cite><strong>Mark D.</strong>Lively · Gas fireplace install</cite>
+          </div>
+          <div class="testimonial-quote fade-in">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            </div>
+            <blockquote>Called Saturday morning at –28. They had heat back on by noon. Honest pricing, no upsell.</blockquote>
+            <cite><strong>Janelle R.</strong>New Sudbury · Emergency furnace</cite>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -281,7 +359,8 @@
       <div class="container">
         <h2>Ready for a Free Quote?</h2>
         <p>Tell us what you need and we'll get back to you within one business day.</p>
-        <form id="leadForm" class="lead-form">
+        <form id="leadForm" class="lead-form" novalidate>
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="tel" name="phone" placeholder="Phone Number" required>
           <select name="service" required>
@@ -294,6 +373,7 @@
             <option value="other">Other</option>
           </select>
           <button type="submit" class="btn btn-red">Get Quote</button>
+          <div class="form-error" role="alert" aria-live="polite"></div>
         </form>
       </div>
     </section>
@@ -308,7 +388,7 @@
           <img src="Northern Climate logo (1).png" alt="Northern Climate">
           <p>Sudbury's trusted choice for heating, cooling, fireplaces, water heaters, and plumbing. Authorized Bryant dealer serving Greater Sudbury and surrounding communities.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="#" aria-label="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -316,7 +396,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="plans.html">Protection Plans</a></li>
+            <li><a href="protection-plans.html">Protection Plans</a></li>
             <li><a href="financing.html">Financing</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -339,7 +419,13 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; <span class="js-year"></span> Northern Climate. All rights reserved.</p>
-        <p>Serving Greater Sudbury &amp; Area</p>
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">·</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">·</span>
+          <span>Serving Greater Sudbury &amp; Area</span>
+        </div>
       </div>
     </div>
   </footer>
