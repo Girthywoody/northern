@@ -3321,3 +3321,163 @@ textarea:focus-visible,
 }
 
 /* End promotions */
+
+/* ============================================================================
+   FEATURE STRIPS (replaces blurry photo-break sections)
+   Full-width editorial bands — gradient + decorative SVG pattern + headline.
+   ============================================================================ */
+.feature-strip {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 9vw, 6.5rem) 0;
+  margin: 0;
+  isolation: isolate;
+}
+.feature-strip + .feature-strip { margin-top: 0; }
+
+.feature-strip .feature-strip-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 760px;
+}
+@media (min-width: 900px) {
+  .feature-strip .feature-strip-inner { max-width: 880px; }
+}
+
+.feature-strip-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+.feature-strip-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.feature-strip h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.feature-strip-sub {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.55;
+  max-width: 620px;
+  margin: 0;
+}
+
+.feature-strip-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.feature-strip-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
+
+/* Decorative inline SVG mark */
+.feature-strip-mark {
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(220px, 35vw, 420px);
+  height: clamp(220px, 35vw, 420px);
+  opacity: 0.18;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 720px) {
+  .feature-strip-mark { width: 200px; height: 200px; right: -3rem; opacity: 0.12; }
+}
+
+/* --- WARM variant (heating, fireplaces, home-cozy) --- */
+.feature-strip--warm {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(212, 162, 69, 0.22), transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(196, 43, 43, 0.22), transparent 55%),
+    linear-gradient(135deg, #1F2940 0%, #2E3852 60%, #3A2A30 100%);
+  color: #fff;
+}
+.feature-strip--warm .feature-strip-eyebrow {
+  color: var(--gold);
+  background: rgba(212, 162, 69, 0.12);
+  border: 1px solid rgba(212, 162, 69, 0.35);
+}
+.feature-strip--warm .feature-strip-sub { color: rgba(255, 255, 255, 0.78); }
+.feature-strip--warm h2 { color: #fff; }
+.feature-strip--warm .feature-strip-mark { color: var(--gold); }
+
+/* --- COOL variant (cooling) --- */
+.feature-strip--cool {
+  background:
+    radial-gradient(circle at 80% 30%, rgba(120, 180, 220, 0.20), transparent 55%),
+    radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0.10), transparent 55%),
+    linear-gradient(135deg, #2E3852 0%, #3D4E6E 50%, #1F2940 100%);
+  color: #fff;
+}
+.feature-strip--cool .feature-strip-eyebrow {
+  color: #B8D4EA;
+  background: rgba(184, 212, 234, 0.12);
+  border: 1px solid rgba(184, 212, 234, 0.35);
+}
+.feature-strip--cool .feature-strip-sub { color: rgba(255, 255, 255, 0.78); }
+.feature-strip--cool h2 { color: #fff; }
+.feature-strip--cool .feature-strip-mark { color: #B8D4EA; }
+
+/* --- CREAM variant (light/airy intro sections) --- */
+.feature-strip--cream {
+  background:
+    radial-gradient(circle at 90% 20%, rgba(196, 43, 43, 0.07), transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(212, 162, 69, 0.08), transparent 50%),
+    linear-gradient(180deg, var(--cream) 0%, var(--warm-100) 100%);
+  color: var(--navy);
+  border-top: 1px solid var(--warm-200);
+  border-bottom: 1px solid var(--warm-200);
+}
+.feature-strip--cream .feature-strip-eyebrow {
+  color: var(--red);
+  background: rgba(196, 43, 43, 0.07);
+  border: 1px solid rgba(196, 43, 43, 0.18);
+}
+.feature-strip--cream .feature-strip-sub { color: var(--warm-600); }
+.feature-strip--cream h2 { color: var(--navy); }
+.feature-strip--cream .feature-strip-mark { color: var(--navy); }
+
+/* Grain texture overlay (subtle film grain) */
+.feature-strip.has-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* End feature strips */

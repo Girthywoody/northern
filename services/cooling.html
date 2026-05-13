@@ -252,11 +252,30 @@
 
             <div class="two-col">
                 <div>
-                    <p style="color: var(--warm-500); font-size: 0.9375rem; line-height: 1.7; margin-bottom: 1rem;">Whether you are installing a brand-new central air system, upgrading to a high-efficiency unit, or looking for dependable maintenance to keep your system running at its best, our licensed technicians deliver professional results every time.</p>
-                    <p style="color: var(--warm-500); font-size: 0.9375rem; line-height: 1.7;">We work with all major brands and specialize in Bryant Evolution and Preferred series air conditioners. From single-family homes to multi-zone setups, we size and install every system for optimal comfort and energy savings in Greater Sudbury's unique climate.</p>
+                    <p style="color: var(--warm-500); font-size: 0.9375rem; line-height: 1.7; margin-bottom: 1rem;">Whether you are installing a brand-new central air system, adding a Mitsubishi ductless mini-split for a hard-to-cool room, or booking dependable seasonal maintenance, our licensed technicians deliver professional results every time.</p>
+                    <p style="color: var(--warm-500); font-size: 0.9375rem; line-height: 1.7;">We work with all major brands and specialize in Bryant Evolution &amp; Preferred series for central A/C and Mitsubishi Electric Hyper-Heating mini-splits for ductless cooling. From single-family homes to multi-zone setups, we size and install every system for Greater Sudbury's climate.</p>
                 </div>
                 <div class="service-overview-img fade-in">
-                    <img src="../images/ac-unit.jpg" alt="Residential air conditioning unit installed outside a home" loading="lazy">
+                    <!--
+                      Photo: Mitsubishi-style ductless mini-split, hotlinked from Unsplash
+                      (free for commercial use, no attribution required). If this URL ever
+                      breaks, swap in any of these alternates with the same `?w=1200&q=80...`
+                      query string:
+                        https://images.unsplash.com/photo-1626885930974-4b69aa1bbd13
+                        https://images.unsplash.com/photo-1611128335686-ab64bbc52250
+                        https://images.unsplash.com/photo-1503965830912-6d7791a4bdf6
+                      Or replace with your own product photo and remove the onerror handler.
+                    -->
+                    <img
+                        src="https://images.unsplash.com/photo-1631545806609-2c75598ad0d5?w=1200&q=80&auto=format&fit=crop"
+                        srcset="https://images.unsplash.com/photo-1631545806609-2c75598ad0d5?w=720&q=80&auto=format&fit=crop 720w,
+                                https://images.unsplash.com/photo-1631545806609-2c75598ad0d5?w=1000&q=80&auto=format&fit=crop 1000w,
+                                https://images.unsplash.com/photo-1631545806609-2c75598ad0d5?w=1400&q=80&auto=format&fit=crop 1400w"
+                        sizes="(min-width: 1200px) 560px, (min-width: 768px) 50vw, 100vw"
+                        alt="Mitsubishi Electric wall-mounted ductless mini-split air conditioner"
+                        width="800" height="600"
+                        loading="lazy" decoding="async"
+                        onerror="this.onerror=null;this.removeAttribute('srcset');this.src='../images/ac-unit.jpg';">
                 </div>
             </div>
         </div>
@@ -404,9 +423,22 @@
     </section>
 
     <!-- Photo Break -->
-    <div class="photo-break">
-        <img src="../images/modern-living-room.jpg" alt="Modern living room with comfortable climate control" loading="lazy">
-    </div>
+    <section class="feature-strip feature-strip--cool has-grain" aria-label="Quiet, efficient cooling">
+        <svg class="feature-strip-mark" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+            <line x1="50" y1="15" x2="50" y2="85"/>
+            <line x1="20" y1="32" x2="80" y2="68"/>
+            <line x1="20" y1="68" x2="80" y2="32"/>
+            <path d="M40 22 L50 30 L60 22"/>
+            <path d="M40 78 L50 70 L60 78"/>
+            <path d="M22 40 L30 50 L22 60"/>
+            <path d="M78 40 L70 50 L78 60"/>
+        </svg>
+        <div class="container feature-strip-inner fade-in">
+            <span class="feature-strip-eyebrow">Cool quietly, all summer</span>
+            <h2>Quiet, efficient cooling that lasts.</h2>
+            <p class="feature-strip-sub">Whether it&rsquo;s a whole-home central system or a ductless mini-split for a tricky room, we size it right the first time — and back it with proper commissioning and seasonal maintenance.</p>
+        </div>
+    </section>
 
     <!-- CTA Band -->
     <section class="cta-band">
