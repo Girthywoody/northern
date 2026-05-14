@@ -3321,3 +3321,657 @@ textarea:focus-visible,
 }
 
 /* End promotions */
+
+/* ============================================================================
+   MOBILE REDESIGN — Premium mobile experience (≤ 899px)
+   This block lives at the end so it cleanly overrides earlier mobile rules.
+   ============================================================================ */
+@media (max-width: 899px) {
+
+  /* ---------- Global rhythm ---------- */
+  :root { --nav-h: 64px; }
+  .section-padding { padding: 3rem 0; }
+  .container { padding: 0 1.25rem; }
+
+  /* Disable expensive blur on mobile for smoother scroll */
+  .nav-wrap {
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    border-top-width: 3px;
+  }
+
+  /* Tighter, premium nav */
+  .nav-inner { height: var(--nav-h); }
+  .nav-logo img { height: 36px; }
+  .nav-wrap.scrolled .nav-logo img { height: 32px; }
+  .hamburger { width: 24px; height: 40px; }
+
+  /* ============================================
+     HERO — completely redesigned for mobile
+     ============================================ */
+  .hero {
+    min-height: auto;
+    align-items: stretch;
+    /* Richer background — adds a top-glow + deeper bottom */
+    background-image:
+      radial-gradient(ellipse 90% 60% at 70% 0%, rgba(196, 43, 43, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 0% 100%, rgba(212, 162, 69, 0.06) 0%, transparent 60%),
+      linear-gradient(180deg, var(--navy-deep) 0%, #0a0d14 100%);
+  }
+  .hero-content { padding: 1.75rem 0 0; gap: 0; }
+  .hero-text { padding-bottom: 1.5rem; max-width: 100%; }
+
+  /* Eyebrow chip — more premium with gold dot */
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.35rem 0.7rem 0.35rem 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .hero-label::before {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 3px rgba(196, 43, 43, 0.22);
+    animation: heroPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes heroPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(196, 43, 43, 0.22); }
+    50%      { box-shadow: 0 0 0 6px rgba(196, 43, 43, 0.0); }
+  }
+
+  /* Headline — bigger, tighter, with brand accent on key word */
+  .hero h1 {
+    font-size: clamp(2.125rem, 9vw, 2.875rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-wrap: balance;
+  }
+
+  /* Subtitle — readable, not greyed out */
+  .hero-subtitle {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+
+  /* CTAs — primary + outlined phone, both feel premium and tappable */
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 1rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.8125rem;
+    min-height: 52px;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+  }
+  .hero-actions .btn-red {
+    box-shadow: 0 8px 24px rgba(196, 43, 43, 0.28);
+  }
+  .hero-actions .btn-outline {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .hero-actions .btn-outline i {
+    color: var(--red);
+    font-size: 0.875rem;
+  }
+
+  /* Credential micro-line — slightly brighter, with separator dot */
+  .hero-credential {
+    margin-top: 0.75rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 1.5rem;
+  }
+
+  /* Service strip — clean 3-up grid with vertical separators and icon stack */
+  .hero-services-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.18);
+  }
+  .hero-service-link {
+    flex: unset;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 0;
+    transition: background 200ms var(--ease), color 200ms var(--ease);
+  }
+  .hero-service-link:last-child { border-right: 0; }
+  .hero-service-link i {
+    font-size: 1rem;
+    color: var(--red);
+    opacity: 1;
+  }
+  .hero-service-link:hover,
+  .hero-service-link:active {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+
+  /* ============================================
+     TRUST ROW — premium 2×2 grid with iconography
+     ============================================ */
+  .trust-row {
+    padding: 1.25rem 1rem;
+    background: var(--navy);
+    border-bottom: 4px solid var(--red);
+  }
+  .trust-row-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    font-size: 0.75rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .trust-row-inner .trust-sep { display: none; }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.55rem;
+    padding: 0.55rem 0.6rem;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .trust-item i {
+    color: var(--gold);
+    font-size: 0.9375rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     MARQUEE — better edges, breathable, larger
+     ============================================ */
+  .marquee-section {
+    padding: 1.75rem 0;
+    background: var(--warm-100);
+  }
+  .marquee-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 1.125rem;
+    color: var(--warm-500);
+  }
+  .marquee {
+    /* Stronger edge fade so logos don't get awkwardly clipped */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  }
+  .marquee-track { gap: 3rem; animation-duration: 28s; }
+  .marquee-track img {
+    height: 40px;
+    opacity: 0.55;
+  }
+
+  /* ============================================
+     SECTION HEADINGS — left bar, tighter
+     ============================================ */
+  .section-heading,
+  .section-heading--left { margin-bottom: 1.75rem; text-align: left; }
+  .section-heading h2,
+  .section-heading--left h2 {
+    font-size: clamp(1.5rem, 6.5vw, 1.875rem);
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+  }
+  .section-heading--left h2 {
+    border-left: 3px solid var(--red);
+    padding-left: 0.875rem;
+  }
+  .section-heading p { font-size: 0.9375rem; line-height: 1.6; max-width: 100%; }
+
+  /* ============================================
+     SERVICES — refined tiles
+     ============================================ */
+  .services-grid-v2 {
+    border: 1px solid var(--warm-200);
+    border-radius: 6px;
+    background: var(--warm-200);
+    gap: 1px;
+  }
+  .service-tile {
+    padding: 1.5rem 1.25rem;
+    min-height: auto;
+    border-left: 0;
+    position: relative;
+  }
+  .service-tile::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    left: 0;
+    width: 3px;
+    background: transparent;
+    transition: background 250ms var(--ease);
+  }
+  .service-tile:hover::before,
+  .service-tile:active::before { background: var(--red); }
+  .service-tile h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--navy);
+  }
+  .service-tile > p {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--warm-500);
+    margin-bottom: 0.875rem;
+    max-width: 100%;
+  }
+  .service-tile-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.6875rem;
+    background: var(--warm-100);
+    color: var(--warm-600);
+  }
+
+  /* Service highlight pair (Annual Maintenance / Emergency) */
+  .services-bottom-row { margin-top: 0.75rem; gap: 0.625rem; }
+  .service-highlight {
+    padding: 1.125rem 1.125rem;
+    gap: 0.875rem;
+    border-radius: 4px;
+    align-items: center;
+  }
+  .service-highlight > i {
+    width: 42px;
+    height: 42px;
+    font-size: 1.0625rem;
+    border-radius: 4px;
+  }
+  .service-highlight h3 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.125rem;
+    line-height: 1.2;
+  }
+  .service-highlight p {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+  .service-highlight .service-tile-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.625rem;
+  }
+
+  /* ============================================
+     WHY STRIP — divider list with numbered accents
+     ============================================ */
+  .why-strip { gap: 0; }
+  .why-strip-item {
+    padding: 1.125rem 0 1.125rem 0;
+    border-bottom: 1px solid var(--warm-200);
+    border-left: 0;
+    position: relative;
+  }
+  .why-strip-item:last-child { border-bottom: 0; }
+  .why-strip-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .why-strip-item p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--warm-500);
+  }
+
+  /* ============================================
+     STATS — bigger numbers, divider grid
+     ============================================ */
+  .stats-bar {
+    padding: 2.5rem 0;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+  }
+  .stats-bar .container,
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .stat-item {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    position: relative;
+  }
+  .stat-item:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    bottom: 25%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .stat-item:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .stat-item .stat-number {
+    font-size: 2.5rem;
+    margin-bottom: 0.375rem;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.85) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-item .stat-label {
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* ============================================
+     PHOTO BREAK — slimmer
+     ============================================ */
+  .photo-break { height: 220px; }
+
+  /* ============================================
+     TESTIMONIALS — card-style on mobile
+     ============================================ */
+  .testimonial-section { padding: 3rem 0; }
+  .testimonial-grid { gap: 1rem; }
+  .testimonial-section .testimonial-quote {
+    background: #fff;
+    border: 1px solid var(--warm-200);
+    border-radius: 6px;
+    padding: 1.25rem 1.25rem;
+    gap: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+  .testimonial-section .testimonial-quote .stars {
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+  }
+  .testimonial-section .testimonial-quote blockquote {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    padding: 0;
+    border: 0;
+    color: var(--navy);
+  }
+  .testimonial-section .testimonial-quote blockquote::before {
+    font-size: 2.25rem;
+    line-height: 0.5;
+    vertical-align: -0.25em;
+  }
+  .testimonial-section .testimonial-quote cite {
+    font-size: 0.6875rem;
+  }
+  .testimonial-section .testimonial-quote cite strong {
+    font-size: 0.875rem;
+  }
+
+  /* ============================================
+     PROMOS — tighter, premium featured card
+     ============================================ */
+  .promos-section { padding: 3rem 0; }
+  .promos-header { margin-bottom: 1.5rem; }
+  .promos-eyebrow { font-size: 0.6875rem; margin-bottom: 0.625rem; }
+  .promos-header h2 { font-size: clamp(1.5rem, 6.5vw, 1.875rem); margin-bottom: 0.5rem; }
+  .promos-header p { font-size: 0.9375rem; line-height: 1.55; }
+  .promos-grid { gap: 1rem; }
+  .promos-stack { gap: 1rem; }
+  .promo-card { border-radius: 6px; }
+  .promo-card--featured .promo-card-inner,
+  .promo-card-inner { padding: 1.5rem 1.375rem; }
+  .promo-ribbon {
+    font-size: 0.625rem;
+    padding: 0.3rem 0.65rem;
+    margin-bottom: 0.875rem;
+  }
+  .promo-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.875rem;
+  }
+  .promo-icon svg { width: 18px; height: 18px; }
+  .promo-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+  }
+  .promo-card--featured h3 { font-size: 1.375rem; }
+  .promo-amount { font-size: 2.125rem; }
+  .promo-amount--small { font-size: 1.75rem; }
+  .promo-amount-suffix { font-size: 0.875rem; }
+  .promo-strike { font-size: 0.9375rem; }
+  .promo-save { font-size: 0.625rem; padding: 0.25rem 0.5rem; }
+  .promo-card p { font-size: 0.875rem; line-height: 1.55; margin-bottom: 1rem; }
+  .promo-meta { gap: 0.4rem; margin-bottom: 1.25rem; }
+  .promo-meta li { font-size: 0.8125rem; }
+  .promo-actions { gap: 0.75rem; padding-top: 0.25rem; }
+  .promo-actions .btn { padding: 0.7rem 1rem; font-size: 0.75rem; }
+  .promo-code { font-size: 0.6875rem; }
+  .promos-fineprint { font-size: 0.6875rem; margin-top: 1.5rem; }
+
+  /* ============================================
+     LEAD FORM — premium dark band
+     ============================================ */
+  .lead-band { padding: 3rem 0; }
+  .lead-band h2 { font-size: clamp(1.5rem, 6vw, 1.875rem); }
+  .lead-band p { font-size: 0.9375rem; margin-bottom: 1.5rem; }
+  .lead-form { gap: 0.625rem; }
+  .lead-form input,
+  .lead-form select {
+    font-size: 1rem;
+    padding: 0.95rem 1rem;
+    min-height: 52px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+  .lead-form .btn {
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    min-height: 52px;
+    border-radius: 4px;
+  }
+
+  /* ============================================
+     FOOTER — refined mobile stacking
+     ============================================ */
+  .site-footer { border-top-width: 3px; }
+  .footer-grid {
+    padding: 2.5rem 0 1.75rem;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  .footer-brand img { height: 38px; }
+  .footer-brand p {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .footer-social a { font-size: 1.375rem; }
+  .footer-col h4 {
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.875rem;
+    color: #fff;
+  }
+  .footer-col ul li a { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.55); }
+  .footer-col .contact-item { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.55); }
+  .footer-bottom {
+    padding: 1.25rem 0;
+    font-size: 0.6875rem;
+    border-top-color: rgba(255, 255, 255, 0.08);
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .footer-legal {
+    font-size: 0.6875rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* ============================================
+     MOBILE CALL BAR — premium fixed CTA
+     ============================================ */
+  body { padding-bottom: 64px; padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  .mobile-call-bar {
+    background: linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+    box-shadow: 0 -8px 24px rgba(196, 43, 43, 0.25),
+                0 -1px 0 rgba(255, 255, 255, 0.08) inset;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mobile-call-bar a {
+    min-height: 60px;
+    padding: 1rem;
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 700;
+    gap: 0.625rem;
+  }
+  .mobile-call-bar a i {
+    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: callRing 2.4s ease-in-out infinite;
+  }
+  @keyframes callRing {
+    0%, 100% { transform: rotate(0); }
+    8%       { transform: rotate(-12deg); }
+    16%      { transform: rotate(12deg); }
+    24%      { transform: rotate(-8deg); }
+    32%      { transform: rotate(8deg); }
+    40%, 100% { transform: rotate(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-call-bar a i { animation: none; }
+    .hero-label::before { animation: none; }
+  }
+
+  /* Lift scroll-top above call bar with safe-area awareness */
+  .scroll-top {
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  /* ============================================
+     MOBILE MENU — premium drawer feel
+     ============================================ */
+  .mobile-menu {
+    background: #fff;
+    border-top: 1px solid var(--warm-200);
+    box-shadow: 0 12px 32px rgba(13, 15, 22, 0.08);
+  }
+  .mobile-menu.open { padding: 0.75rem 1.25rem 1.25rem; }
+  .mobile-menu a {
+    padding: 0.875rem 0.875rem;
+    font-size: 0.9375rem;
+    border-radius: 4px;
+    color: var(--navy);
+  }
+  .mobile-menu a:hover,
+  .mobile-menu a:active { background: var(--warm-100); }
+
+  /* ============================================
+     INNER PAGE HEROES
+     ============================================ */
+  .page-hero { padding: 2rem 0 1.5rem; }
+  .page-hero h1 {
+    font-size: clamp(1.625rem, 7vw, 2.25rem);
+    letter-spacing: -0.02em;
+  }
+  .page-hero-sub { font-size: 0.9375rem; }
+  .breadcrumb { font-size: 0.75rem; }
+
+  /* ============================================
+     FORMS — bigger touch targets, premium feel
+     ============================================ */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 0.95rem 1rem;
+    min-height: 52px;
+    border-radius: 4px;
+  }
+  .form-group textarea { min-height: 120px; }
+  .contact-form-wrap { padding: 1.5rem 1.25rem; border-radius: 6px; }
+
+  /* ============================================
+     PLAN CARDS
+     ============================================ */
+  .plan-card { padding: 1.75rem 1.5rem; border-radius: 6px; }
+  .plan-card h3 { font-size: 1.25rem; }
+
+  /* ============================================
+     FAQ
+     ============================================ */
+  .faq-question { font-size: 0.9375rem; padding: 1.125rem 0; min-height: 56px; }
+  .faq-answer-inner { font-size: 0.875rem; line-height: 1.65; padding-bottom: 1.125rem; }
+
+  /* ============================================
+     AREA TAGS
+     ============================================ */
+  .area-tag {
+    padding: 0.4rem 0.875rem;
+    font-size: 0.75rem;
+    border-radius: 2px;
+    background: var(--warm-100);
+    border-color: var(--warm-200);
+  }
+}
+
+/* ----- Smaller phones (≤ 380px) ----- */
+@media (max-width: 380px) {
+  .container { padding: 0 1rem; }
+  .hero h1 { font-size: 1.875rem; }
+  .hero-service-link { font-size: 0.625rem; padding: 0.875rem 0.25rem; }
+  .hero-service-link i { font-size: 0.9375rem; }
+  .trust-item { font-size: 0.6875rem; padding: 0.45rem 0.5rem; gap: 0.45rem; }
+  .stat-item .stat-number { font-size: 2.125rem; }
+  .promo-card h3 { font-size: 1.125rem; }
+  .promo-card--featured h3 { font-size: 1.25rem; }
+}
+
+/* End mobile redesign */
