@@ -4084,8 +4084,6 @@ textarea:focus-visible,
     filter: blur(80px);
     pointer-events: none;
   }
-  .hero-subtitle { color: rgba(255, 255, 255, 0.62); }
-  .hero-credential { color: rgba(255, 255, 255, 0.46); }
 }
 
 /* Partnership boxes — gentle lift so they don't read as flat slabs */
@@ -4098,3 +4096,55 @@ textarea:focus-visible,
   transform: translateY(-2px);
 }
 /* End financing + polish */
+
+/* ============================================================================
+   TEXT CONTRAST PASS — lift low-visibility text on dark backgrounds
+   (applies at all breakpoints; deliberately placed last so it wins)
+   ============================================================================ */
+
+/* Inner-page hero subtitle — was dark grey (--warm-600) on navy */
+.page-hero-sub { color: rgba(255, 255, 255, 0.82); }
+
+/* Top info bar */
+.top-bar,
+.top-bar a { color: rgba(255, 255, 255, 0.72); }
+
+/* Home hero */
+.hero-label { color: rgba(255, 255, 255, 0.72); }
+.hero-subtitle { color: rgba(255, 255, 255, 0.78); }
+.hero-credential { color: rgba(255, 255, 255, 0.62); }
+.hero-service-link { color: rgba(255, 255, 255, 0.78); }
+
+/* Breadcrumbs over dark page heroes */
+.breadcrumb { color: rgba(255, 255, 255, 0.7); }
+.breadcrumb a { color: rgba(255, 255, 255, 0.7); }
+.breadcrumb a:hover { color: #fff; }
+
+/* Stat labels on the navy stats bar */
+.stat-item .stat-label { color: rgba(255, 255, 255, 0.72); }
+
+/* Dark lead-capture band */
+.lead-band > .container > p,
+.lead-band p { color: rgba(255, 255, 255, 0.78); }
+.lead-form input::placeholder { color: rgba(255, 255, 255, 0.6); }
+
+/* Emergency highlight tile (navy) */
+.service-highlight--emergency p { color: rgba(255, 255, 255, 0.72); }
+
+/* Example-payment figure fine print (navy gradient) */
+.finance-figure-note { color: rgba(255, 255, 255, 0.64); }
+
+/* Footer — lift body copy, links and legal off the dark navy */
+.site-footer { color: var(--warm-300); }
+.footer-brand p { color: var(--warm-300); }
+.footer-col ul li a { color: var(--warm-300); }
+.footer-col .contact-item { color: var(--warm-300); }
+.footer-social a { color: var(--warm-300); }
+.footer-col ul li a:hover,
+.footer-social a:hover { color: #fff; }
+.footer-bottom { color: var(--warm-300); }
+.footer-legal,
+.footer-legal a { color: var(--warm-300); }
+.footer-legal a:hover { color: #fff; }
+.footer-legal .sep { color: var(--warm-400); }
+/* End contrast pass */
