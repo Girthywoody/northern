@@ -105,6 +105,17 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
+  /* ---------- Pause partner marquee when off-screen ---------- */
+  var marqueeTrack = document.querySelector('.marquee-track');
+  if (marqueeTrack && !prefersReduced && 'IntersectionObserver' in window) {
+    var marqueeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        marqueeTrack.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0 });
+    marqueeObserver.observe(marqueeTrack);
+  }
+
   /* ---------- Animated Stat Counters ---------- */
   function animateCounter(el) {
     var target = parseInt(el.getAttribute('data-count'), 10);

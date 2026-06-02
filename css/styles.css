@@ -3975,3 +3975,126 @@ textarea:focus-visible,
 }
 
 /* End mobile redesign */
+
+/* ============================================================================
+   FINANCING PAGE
+   ============================================================================ */
+.finance-overview { align-items: center; }
+
+.finance-figure {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff;
+  border-radius: 6px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 50px rgba(26, 30, 46, 0.18);
+}
+.finance-figure-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(212, 162, 69, 0.18), transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(196, 43, 43, 0.16), transparent 45%);
+  pointer-events: none;
+}
+.finance-figure > *:not(.finance-figure-bg) { position: relative; z-index: 1; }
+.finance-figure-eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+.finance-figure-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.finance-figure-from {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+.finance-figure-value {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--gold);
+}
+.finance-figure-unit {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+.finance-figure p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1rem;
+}
+.finance-figure strong { color: #fff; font-weight: 600; }
+.finance-figure-note {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+.finance-disclaimer {
+  max-width: 740px;
+  margin: 2.5rem auto 0;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--warm-500);
+  text-align: center;
+}
+@media (max-width: 899px) {
+  .finance-figure { padding: 1.75rem; }
+}
+
+/* Shared CTA action row (replaces per-page inline flex styles) */
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.cta-band .cta-actions .btn + .btn { margin-left: 0; }
+
+/* ============================================================================
+   VISUAL POLISH (site-wide, additive)
+   ============================================================================ */
+/* Hero — extra depth + better text contrast on desktop */
+@media (min-width: 900px) {
+  .hero-bg-pattern::after {
+    content: '';
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 162, 69, 0.07) 0%, transparent 65%);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .hero-subtitle { color: rgba(255, 255, 255, 0.62); }
+  .hero-credential { color: rgba(255, 255, 255, 0.46); }
+}
+
+/* Partnership boxes — gentle lift so they don't read as flat slabs */
+.partnership-box {
+  transition: border-color 300ms var(--ease), box-shadow 300ms var(--ease), transform 300ms var(--ease);
+}
+.partnership-box:hover {
+  border-color: var(--warm-300);
+  box-shadow: 0 10px 30px rgba(26, 30, 46, 0.07);
+  transform: translateY(-2px);
+}
+/* End financing + polish */

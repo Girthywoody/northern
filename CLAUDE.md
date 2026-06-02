@@ -8,7 +8,7 @@ Static multi-page website for **Northern Climate**, an HVAC business in Greater 
 
 ## Architecture
 
-- **9 HTML pages**: `index.html`, `about.html`, `plans.html`, `financing.html`, `contact.html`, and 4 service pages in `services/` (heating, cooling, fireplaces, plumbing)
+- **9 HTML pages**: `index.html`, `about.html`, `protection-plans.html` (Maintenance), `financing.html`, `contact.html`, and 4 service pages in `services/` (heating, cooling, fireplaces, plumbing)
 - **1 shared CSS file**: `css/styles.css` — all visual styling lives here. Uses CSS custom properties defined in `:root` (e.g., `--red`, `--navy`, `--cream`, `--warm-*`). Typography: Fraunces (headings) + Inter (body) via Google Fonts CDN.
 - **1 shared JS file**: `js/main.js` — handles nav scroll shadow, mobile menu, services dropdown accordion, FAQ accordion, scroll-triggered fade-in (IntersectionObserver), animated stat counters, contact form mailto, and lead form mailto. Runs as an IIFE with `defer`.
 - **Service pages** live in `services/` and use `../` prefixed paths for all shared assets and root-level page links.
