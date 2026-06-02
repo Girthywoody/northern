@@ -4148,3 +4148,20 @@ textarea:focus-visible,
 .footer-legal a:hover { color: #fff; }
 .footer-legal .sep { color: var(--warm-400); }
 /* End contrast pass */
+
+/* ============================================================================
+   DESKTOP NAV WIDTH — let the header span the full viewport so the logo sits
+   near the left edge and the menu near the right edge, instead of clustering
+   in the centered 1200px container. Page content stays contained.
+   ============================================================================ */
+@media (min-width: 1024px) {
+  .nav-wrap .container,
+  .top-bar .container {
+    max-width: none;
+    padding-left: clamp(1.5rem, 5vw, 5rem);
+    padding-right: clamp(1.5rem, 5vw, 5rem);
+  }
+  /* a little more breathing room between menu items */
+  .nav-links { gap: 0.5rem; }
+}
+/* End desktop nav width */
