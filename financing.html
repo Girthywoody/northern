@@ -83,6 +83,56 @@
     }
     </script>
 
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I apply for financing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with a free in-home quote. Once you've chosen your system, we'll help you complete a short financing application and walk you through the available terms. Approval decisions are usually quick, so your project doesn't have to wait."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What can I finance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Furnaces, air conditioners, fireplaces, water heaters, heat pumps, and complete multi-system upgrades. If you're replacing more than one piece of equipment, we can roll it into a single monthly payment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the rates and terms?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rates and term lengths depend on the amount financed and your approved credit. We'll lay out the exact monthly payment and total cost in plain language before you commit — there's never any obligation to proceed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will applying affect my credit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A financing application involves a credit check, like most major purchases. We only run it once you've decided you'd like to move forward, and we're happy to answer your questions beforehand so there are no surprises."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I pay off my balance early?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In most cases, yes — and paying early can reduce the total interest you pay. The exact terms depend on the plan you choose, and we'll go over the details with you up front."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -119,7 +169,7 @@
                     <span><i class="fas fa-envelope"></i> <a href="mailto:service@northernclimatesudbury.com">service@northernclimatesudbury.com</a></span>
                 </div>
                 <div>
-                    <span><i class="fas fa-clock"></i> <strong>Emergency Service Available</strong></span>
+                    <span><i class="fas fa-bolt"></i> <strong>Emergency Service Available</strong></span>
                 </div>
             </div>
         </div>
@@ -145,7 +195,7 @@
                         </div>
                     </li>
                     <li><a href="protection-plans.html">Maintenance</a></li>
-                    <li><a href="financing.html" class="active">Financing</a></li>
+                    <li><a href="financing.html" class="active" aria-current="page">Financing</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li>
                         <a href="tel:7055864300" class="nav-cta">
@@ -187,6 +237,7 @@
     <section class="page-hero has-grain">
         <div class="container">
             <h1>Financing Options</h1>
+            <p class="page-hero-sub">Spread the cost of a new furnace, A/C, or fireplace over manageable monthly payments — so comfort doesn't have to wait.</p>
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
                 <span class="sep">/</span>
@@ -195,122 +246,222 @@
         </div>
     </section>
 
-    <!-- Overview -->
+    <!-- Overview + Example payment -->
     <section class="section-padding">
         <div class="container">
-            <div class="section-heading fade-in">
-                <h2>Making Home Comfort Affordable</h2>
+            <div class="two-col finance-overview">
+                <div class="fade-in prose">
+                    <h2 class="u-mb-md">Comfort that fits your budget</h2>
+                    <p>A new heating or cooling system is a major investment — and a breakdown rarely waits for a convenient time. Financing lets you install the right system now and pay for it gradually, instead of putting off the work or settling for a smaller unit than your home really needs.</p>
+                    <p>During your free quote we'll lay out the available plans in plain language, show you the monthly numbers, and let you pick the term that suits your household. No pressure, no obligation.</p>
+                </div>
+
+                <aside class="finance-figure fade-in" aria-label="Example monthly payment">
+                    <div class="finance-figure-bg" aria-hidden="true"></div>
+                    <span class="finance-figure-eyebrow">Example monthly payment</span>
+                    <div class="finance-figure-amount">
+                        <span class="finance-figure-from">from</span>
+                        <span class="finance-figure-value">$90</span>
+                        <span class="finance-figure-unit">/&nbsp;month*</span>
+                    </div>
+                    <p>A <strong>$5,000 high-efficiency furnace</strong> spread over a 60-month term — around the cost of a few coffees a week for year-round comfort.</p>
+                    <p class="finance-figure-note">*Illustrative example only. Your actual payment depends on the amount financed, the term you choose, and your approved rate. On approved credit.</p>
+                </aside>
             </div>
-            <p class="fade-in" style="max-width: 780px; margin: 0 auto; text-align: center; color: var(--warm-500); font-size: 1.0625rem; line-height: 1.8;">
-                We understand that HVAC installations are a significant investment. That's why we offer flexible financing options to help you get the comfort you need without the financial stress. Enjoy low monthly payments, quick approval, and flexible terms.
-            </p>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="section-padding" style="background: #fff;">
+    <!-- Why finance -->
+    <section class="section-padding section-alt">
         <div class="container">
-            <div class="benefits-grid">
-
-                <div class="service-card fade-in">
+            <div class="section-heading section-heading--left">
+                <h2>Why finance with us</h2>
+                <p>Three reasons homeowners across Greater Sudbury choose to spread the cost.</p>
+            </div>
+            <div class="benefits-grid stagger-children">
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-wallet"></i>
                     <h3>Low Monthly Payments</h3>
-                    <p>Spread the cost of your new system into manageable monthly payments that fit comfortably within your household budget.</p>
+                    <p>Break a big purchase into predictable monthly amounts that sit comfortably alongside the rest of your bills.</p>
                 </div>
-
-                <div class="service-card fade-in">
-                    <h3>Quick Approval</h3>
-                    <p>Simple application process with fast approval decisions so you can get your new system installed without delay.</p>
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast, Simple Approval</h3>
+                    <p>A short application and a quick decision, so a failed furnace doesn't leave you waiting in the cold.</p>
                 </div>
-
-                <div class="service-card fade-in">
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-sliders-h"></i>
                     <h3>Flexible Terms</h3>
-                    <p>Choose the repayment plan that works best for your budget with a variety of term lengths and options available.</p>
+                    <p>Pick a shorter term to pay less interest, or a longer one for a lower monthly payment — whatever fits your budget.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
-    <section class="section-padding" style="background: var(--cream);">
+    <section class="section-padding">
         <div class="container">
             <div class="section-heading">
                 <h2>How It Works</h2>
+                <p>Three simple steps from quote to cozy.</p>
             </div>
 
-            <div class="steps-row">
-
+            <div class="steps-row stagger-children">
                 <div class="step-card fade-in">
                     <div class="step-number">1</div>
-                    <h3>Get a Free Quote</h3>
-                    <p>Contact us for a complimentary assessment and quote on the heating, cooling, or fireplace system that's right for your home.</p>
+                    <h3>Get a free quote</h3>
+                    <p>We assess your home, recommend the right system, and give you a clear written price with no surprises.</p>
                 </div>
-
                 <div class="step-card fade-in">
                     <div class="step-number">2</div>
-                    <h3>Apply for Financing</h3>
-                    <p>Quick and simple application process. We'll walk you through every step to make it as easy as possible.</p>
+                    <h3>Apply for financing</h3>
+                    <p>Fill out a short application — we'll walk you through it and answer any questions about terms and payments.</p>
                 </div>
-
                 <div class="step-card fade-in">
                     <div class="step-number">3</div>
-                    <h3>Enjoy Your Comfort</h3>
-                    <p>We install your new system and you pay at your pace. Start enjoying better home comfort right away.</p>
+                    <h3>Enjoy your comfort</h3>
+                    <p>We install your new system and you pay at your pace. Start enjoying better comfort right away.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- What Can Be Financed -->
+    <!-- What you can finance -->
+    <section class="section-padding section-alt">
+        <div class="container">
+            <div class="section-heading section-heading--left">
+                <h2>What you can finance</h2>
+                <p>If it keeps your home comfortable, chances are we can help you finance it.</p>
+            </div>
+
+            <div class="service-detail-grid stagger-children">
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-fire-alt"></i>
+                    <div>
+                        <h4>Furnaces &amp; Heating</h4>
+                        <p>High-efficiency Bryant furnaces and full heating system replacements, installed and financed together.</p>
+                    </div>
+                </div>
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-snowflake"></i>
+                    <div>
+                        <h4>Air Conditioning</h4>
+                        <p>Central air systems and efficiency upgrades that pay you back in lower summer energy bills.</p>
+                    </div>
+                </div>
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <h4>Fireplaces</h4>
+                        <p>Gas and wood fireplaces and inserts from Regency and Enviro, including wood-to-gas conversions.</p>
+                    </div>
+                </div>
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-water"></i>
+                    <div>
+                        <h4>Water Heaters</h4>
+                        <p>Tank and tankless water heater replacements for reliable hot water without the upfront hit.</p>
+                    </div>
+                </div>
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-sync-alt"></i>
+                    <div>
+                        <h4>Heat Pumps</h4>
+                        <p>Energy-efficient heating and cooling in one system — often eligible for rebates as well.</p>
+                    </div>
+                </div>
+                <div class="service-detail-item fade-in">
+                    <i class="fas fa-layer-group"></i>
+                    <div>
+                        <h4>Complete System Upgrades</h4>
+                        <p>Replacing more than one system at once? Bundle it into a single, manageable monthly payment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing FAQ -->
     <section class="section-padding">
         <div class="container">
-            <div class="section-heading">
-                <h2>What Can Be Financed</h2>
+            <div class="section-heading fade-in">
+                <h2>Financing FAQ</h2>
             </div>
 
-            <div class="benefits-grid">
-
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Furnace Installations</h3>
+            <div class="faq-list fade-in">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I apply for financing?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Start with a free in-home quote. Once you've chosen your system, we'll help you complete a short financing application and walk you through the available terms. Approval decisions are usually quick, so your project doesn't have to wait.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Air Conditioning Systems</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What can I finance?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Furnaces, air conditioners, fireplaces, water heaters, heat pumps, and complete multi-system upgrades. If you're replacing more than one piece of equipment, we can roll it into a single monthly payment.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Fireplace Installations</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are the rates and terms?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Rates and term lengths depend on the amount financed and your approved credit. We'll lay out the exact monthly payment and total cost in plain language before you commit — there's never any obligation to proceed.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Water Heater Replacements</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Will applying affect my credit?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            A financing application involves a credit check, like most major purchases. We only run it once you've decided you'd like to move forward, and we're happy to answer your questions beforehand so there are no surprises.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Heat Pump Installations</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I pay off my balance early?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            In most cases, yes — and paying early can reduce the total interest you pay. The exact terms depend on the plan you choose, and we'll go over the details with you up front.
+                        </div>
+                    </div>
                 </div>
-
-                <div class="service-card fade-in" style="text-align: center;">
-                    <h3>Complete HVAC System Upgrades</h3>
-                </div>
-
             </div>
+
+            <p class="finance-disclaimer">Financing is provided through third-party lending partners and is subject to credit approval. Rates, terms, and monthly payments vary by approved amount and term length. Any figures shown on this page are illustrative examples only and are not an offer of credit.</p>
         </div>
     </section>
 
     <!-- CTA Band -->
     <section class="cta-band">
-        <div class="container" style="text-align: center;">
-            <h2>Let's Make It Affordable</h2>
-            <p>Don't let budget concerns keep you from the comfort you deserve. Get in touch today to learn about your financing options.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn btn-white">
-                    <i class="fas fa-envelope"></i> Contact Us
-                </a>
-                <a href="tel:7055864300" class="btn btn-white">
-                    <i class="fas fa-phone-alt"></i> Call (705) 586-4300
-                </a>
+        <div class="container">
+            <h2>Let's make it affordable</h2>
+            <p>Tell us what you need and we'll go over your financing options — free, and with no obligation.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white"><i class="fas fa-envelope"></i> Get a Free Quote</a>
+                <a href="tel:7055864300" class="btn btn-outline"><i class="fas fa-phone-alt"></i> (705) 586-4300</a>
             </div>
         </div>
     </section>
@@ -337,12 +488,20 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="protection-plans.html">Maintenance</a></li>
+                        <li><a href="financing.html">Financing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
                         <li><a href="services/heating.html">Heating</a></li>
                         <li><a href="services/cooling.html">Cooling</a></li>
                         <li><a href="services/fireplaces.html">Fireplaces</a></li>
-                        <!-- <li><a href="services/plumbing.html">Plumbing</a></li> -->
-                        <li><a href="protection-plans.html">Maintenance</a></li>
-                        <li><a href="financing.html">Financing</a></li>
+                        <!-- <li><a href="services/plumbing.html">Plumbing &amp; Water Heaters</a></li> -->
                     </ul>
                 </div>
 
