@@ -1,16 +1,4 @@
-/* ===========================
-   Northern Climate - Main JS
-   =========================== */
-
-/*
- * EmailJS configuration (optional)
- * --------------------------------
- * 1. Sign up at https://www.emailjs.com (free tier: 200 emails/month).
- * 2. Add an email service and two templates (one for the contact form, one
- *    for the homepage lead form). EmailJS will display the IDs.
- * 3. Add your domain to the EmailJS Allowed Origins list to prevent abuse.
- * 4. Paste the IDs below — leave any field blank to fall back to mailto.
- */
+/* EmailJS (optional): fill the IDs below to send through EmailJS; leave any blank to fall back to mailto. */
 var EMAILJS_PUBLIC_KEY        = '';
 var EMAILJS_SERVICE_ID        = '';
 var EMAILJS_CONTACT_TEMPLATE  = '';
@@ -19,7 +7,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
 (function () {
   'use strict';
 
-  /* ---------- Sticky Nav Shadow ---------- */
   var navWrap = document.querySelector('.nav-wrap');
   if (navWrap) {
     window.addEventListener('scroll', function () {
@@ -27,7 +14,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     }, { passive: true });
   }
 
-  /* ---------- Mobile Menu ---------- */
   var hamburger = document.querySelector('.hamburger');
   var mobileMenu = document.querySelector('.mobile-menu');
 
@@ -39,7 +25,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
       hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     });
 
-    // Close on link click (but not the services toggle)
     mobileMenu.querySelectorAll('a:not(.mobile-services-toggle)').forEach(function (link) {
       link.addEventListener('click', function () {
         hamburger.classList.remove('active');
@@ -49,7 +34,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
-  /* ---------- Mobile Services Accordion ---------- */
   var servicesToggle = document.querySelector('.mobile-services-toggle');
   var mobileSubmenu = document.querySelector('.mobile-submenu');
 
@@ -61,7 +45,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
-  /* ---------- Desktop Dropdown (click support for touch) ---------- */
   var dropdown = document.querySelector('.nav-dropdown');
   if (dropdown) {
     dropdown.addEventListener('click', function (e) {
@@ -80,12 +63,10 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
-  /* ---------- Footer Year ---------- */
   document.querySelectorAll('.js-year').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---------- Scroll-triggered Fade-in (Intersection Observer) ---------- */
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!prefersReduced && 'IntersectionObserver' in window) {
@@ -105,7 +86,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
-  /* ---------- Pause partner marquee when off-screen ---------- */
   var marqueeTrack = document.querySelector('.marquee-track');
   if (marqueeTrack && !prefersReduced && 'IntersectionObserver' in window) {
     var marqueeObserver = new IntersectionObserver(function (entries) {
@@ -116,7 +96,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     marqueeObserver.observe(marqueeTrack);
   }
 
-  /* ---------- Animated Stat Counters ---------- */
   function animateCounter(el) {
     var target = parseInt(el.getAttribute('data-count'), 10);
     var suffix = el.getAttribute('data-suffix') || '';
@@ -160,7 +139,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   }
 
-  /* ---------- FAQ Accordion ---------- */
   document.querySelectorAll('.faq-question').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var item = btn.closest('.faq-item');
@@ -179,7 +157,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     });
   });
 
-  /* ---------- Scroll-to-top button ---------- */
   var scrollTopBtn = document.createElement('button');
   scrollTopBtn.type = 'button';
   scrollTopBtn.className = 'scroll-top';
@@ -197,7 +174,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
   });
 
-  /* ---------- EmailJS conditional load ---------- */
   var EMAILJS_READY = false;
   function loadEmailJS(cb) {
     if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID) { cb(false); return; }
@@ -217,7 +193,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
   }
   if (EMAILJS_PUBLIC_KEY) loadEmailJS(function () {});
 
-  /* ---------- Form helpers ---------- */
   function showFormError(form, message) {
     var err = form.querySelector('.form-error');
     if (err) {
@@ -245,7 +220,6 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     return hp && hp.value && hp.value.length > 0;
   }
 
-  /* ---------- Contact Form ---------- */
   var contactForm = document.getElementById('contactForm');
   var formSuccess = document.getElementById('formSuccess');
 
@@ -253,7 +227,7 @@ var EMAILJS_LEAD_TEMPLATE     = '';
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       hideFormError(contactForm);
-      if (honeypotTripped(contactForm)) return; // silently drop spam
+      if (honeypotTripped(contactForm)) return;
 
       var submitBtn = contactForm.querySelector('button[type="submit"]');
       var originalLabel = submitBtn ? submitBtn.textContent : '';
@@ -277,14 +251,12 @@ var EMAILJS_LEAD_TEMPLATE     = '';
             done(false);
           });
       } else {
-        // No EmailJS configured — use mailto
         sendMailto(contactForm, 'Quote Request from ' + ((contactForm.querySelector('[name="firstName"]') || {}).value || 'website'));
         done(true);
       }
     });
   }
 
-  /* ---------- Quick Lead Form ---------- */
   var leadForm = document.getElementById('leadForm');
   if (leadForm) {
     leadForm.addEventListener('submit', function (e) {

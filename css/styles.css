@@ -1,14 +1,8 @@
-/* ================================================
-   Northern Climate — "Industrial Modern" Design System
-   ================================================ */
-
-/* --- Palette (lighter v2 theme) --- */
 :root {
   --red: #C42B2B;
   --red-dark: #9A1C1C;
   --red-glow: rgba(196, 43, 43, 0.12);
 
-  /* Softer, lighter navy family — still on-brand, much more airy */
   --navy: #2E3852;
   --navy-deep: #1F2940;
   --navy-light: #4A5777;
@@ -16,7 +10,6 @@
   --gold: #D4A245;
   --gold-light: #E2C67A;
 
-  /* Brighter neutrals */
   --cream: #FAF8F4;
   --warm-100: #F1EEE8;
   --warm-200: #E0DCD4;
@@ -32,7 +25,6 @@
   --ease-back: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -65,13 +57,11 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
-/* --- Scrollbar --- */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--cream); }
 ::-webkit-scrollbar-thumb { background: var(--warm-300); border-radius: 1px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--red); }
 
-/* --- Noise texture mixin (applied via pseudo-elements) --- */
 .has-grain::before {
   content: '';
   position: absolute;
@@ -83,9 +73,6 @@ ul { list-style: none; }
   z-index: 0;
 }
 
-/* ============================================
-   LAYOUT
-   ============================================ */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -100,9 +87,6 @@ ul { list-style: none; }
 
 .section-alt { background: var(--warm-100); }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -194,12 +178,6 @@ ul { list-style: none; }
   transform: translateY(-1px);
 }
 
-/* ============================================
-   TOP BAR
-   ============================================ */
-/* ============================================
-   TOP BAR
-   ============================================ */
 .top-bar {
   background: var(--navy-deep);
   color: rgba(255,255,255,0.6);
@@ -233,9 +211,6 @@ ul { list-style: none; }
 }
 .top-bar strong { color: var(--gold-light); font-weight: 600; }
 
-/* ============================================
-   NAVIGATION
-   ============================================ */
 .nav-wrap {
   position: sticky;
   top: 0;
@@ -310,7 +285,6 @@ ul { list-style: none; }
   transform: scaleX(1);
 }
 
-/* Dropdown */
 .nav-dropdown { position: relative; }
 .nav-dropdown-toggle { cursor: pointer; }
 .nav-dropdown-toggle i {
@@ -358,7 +332,6 @@ ul { list-style: none; }
   padding-left: 1rem;
 }
 
-/* Nav CTA */
 .nav-cta {
   display: inline-flex !important;
   align-items: center;
@@ -381,7 +354,6 @@ ul { list-style: none; }
 .nav-cta::after { display: none !important; }
 .nav-cta i { font-size: 0.7rem; }
 
-/* Hamburger */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -412,7 +384,6 @@ ul { list-style: none; }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.active span:nth-child(3) { width: 100%; transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Mobile Menu */
 .mobile-menu {
   display: block;
   background: #fff;
@@ -459,9 +430,6 @@ ul { list-style: none; }
 }
 .mobile-services-toggle.open i { transform: rotate(180deg); }
 
-/* ============================================
-   HERO (home)
-   ============================================ */
 .hero {
   position: relative;
   overflow: hidden;
@@ -518,7 +486,6 @@ ul { list-style: none; }
   padding-bottom: 3.5rem;
 }
 
-/* Hero image — right column */
 .hero-image {
   display: none;
 }
@@ -591,7 +558,6 @@ ul { list-style: none; }
   animation: hero-fade-up 700ms var(--ease) 650ms forwards;
 }
 
-/* Credential line — under CTAs */
 .hero-credential {
   margin-top: 1.25rem;
   font-family: 'Inter', sans-serif;
@@ -603,7 +569,6 @@ ul { list-style: none; }
   animation: hero-fade-up 600ms var(--ease) 800ms forwards;
 }
 
-/* Service links — full-width strip at bottom of hero */
 .hero-services-row {
   display: flex;
   width: 100%;
@@ -653,9 +618,6 @@ ul { list-style: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================
-   PAGE HERO (inner pages)
-   ============================================ */
 .page-hero {
   background: var(--navy);
   color: #fff;
@@ -667,7 +629,6 @@ ul { list-style: none; }
 .page-hero.warm-tint { background: linear-gradient(135deg, var(--navy) 0%, #2a1a1a 100%); }
 .page-hero.cool-tint { background: linear-gradient(135deg, var(--navy) 0%, #1a2a3a 100%); }
 
-/* Industrial hard cut */
 .page-hero::after {
   content: '';
   position: absolute;
@@ -699,9 +660,6 @@ ul { list-style: none; }
 .breadcrumb a:hover { color: #fff; }
 .breadcrumb .sep { margin: 0 0.125rem; font-size: 0.65rem; }
 
-/* ============================================
-   SECTION HEADINGS
-   ============================================ */
 .section-heading {
   text-align: center;
   margin-bottom: 3.5rem;
@@ -729,9 +687,6 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 
-/* ============================================
-   BRAND PARTNERS — Infinite Marquee
-   ============================================ */
 .marquee-section {
   background: var(--warm-100);
   border-top: 2px solid var(--warm-200);
@@ -755,7 +710,7 @@ ul { list-style: none; }
   position: relative;
   width: 100%;
   overflow: hidden;
-  /* Fade edges */
+
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
@@ -803,7 +758,6 @@ ul { list-style: none; }
   .marquee-track { animation: none; }
 }
 
-/* Legacy fallback for inner pages still using .partners */
 .partners {
   background: var(--warm-100);
   border-top: 2px solid var(--warm-200);
@@ -827,9 +781,6 @@ ul { list-style: none; }
   color: var(--warm-400);
 }
 
-/* ============================================
-   SERVICE CARDS (home page)
-   ============================================ */
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -849,7 +800,7 @@ ul { list-style: none; }
   transition: all 300ms var(--ease);
   cursor: pointer;
 }
-/* Thick left accent */
+
 .service-card::before {
   content: '';
   position: absolute;
@@ -917,7 +868,6 @@ ul { list-style: none; }
 }
 .service-card:hover .card-link { gap: 0.625rem; }
 
-/* Emergency variant */
 .service-card.emergency-card,
 .service-card.emergency {
   background: var(--red);
@@ -940,9 +890,6 @@ ul { list-style: none; }
 .service-card.emergency-card .card-link,
 .service-card.emergency .card-link { color: #fff; }
 
-/* ============================================
-   WHY CHOOSE US
-   ============================================ */
 .why-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -974,7 +921,7 @@ ul { list-style: none; }
   border: 2px solid var(--warm-200);
   transition: all 300ms var(--ease);
 }
-/* If icon is direct child (not wrapped) */
+
 .why-card > i {
   width: 56px;
   height: 56px;
@@ -999,9 +946,6 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
-/* ============================================
-   SERVICE TILES (home page redesign)
-   ============================================ */
 .services-grid-v2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -1138,9 +1082,6 @@ ul { list-style: none; }
   color: #fff;
 }
 
-/* ============================================
-   WHY STRIP (home page redesign)
-   ============================================ */
 .why-strip {
   display: grid;
   grid-template-columns: 1fr;
@@ -1176,7 +1117,6 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
-/* Left-aligned heading variant */
 .section-heading--left {
   text-align: left;
   margin-bottom: 2.5rem;
@@ -1185,9 +1125,6 @@ ul { list-style: none; }
   margin: 0;
 }
 
-/* ============================================
-   PROSE (body copy blocks on inner pages)
-   ============================================ */
 .prose p {
   color: var(--warm-500);
   font-size: 1.0625rem;
@@ -1196,9 +1133,6 @@ ul { list-style: none; }
 }
 .prose p:last-child { margin-bottom: 0; }
 
-/* ============================================
-   AREA TAGS (service area locations)
-   ============================================ */
 .area-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1215,9 +1149,6 @@ ul { list-style: none; }
   color: var(--warm-700);
 }
 
-/* ============================================
-   LOGO PLACEHOLDER (about page)
-   ============================================ */
 .about-logo-wrap {
   display: flex;
   align-items: center;
@@ -1231,9 +1162,6 @@ ul { list-style: none; }
   border: 2px solid var(--warm-200);
 }
 
-/* ============================================
-   PHOTO BREAK (full-width image banner)
-   ============================================ */
 .photo-break {
   position: relative;
   height: 300px;
@@ -1248,9 +1176,6 @@ ul { list-style: none; }
   .photo-break { height: 400px; }
 }
 
-/* ============================================
-   SERVICE OVERVIEW PHOTO
-   ============================================ */
 .service-overview-img {
   overflow: hidden;
   border-radius: 2px;
@@ -1267,9 +1192,6 @@ ul { list-style: none; }
   .service-overview-img img { min-height: 340px; }
 }
 
-/* ============================================
-   ABOUT PHOTO
-   ============================================ */
 .about-photo-wrap {
   overflow: hidden;
   border-radius: 2px;
@@ -1282,9 +1204,6 @@ ul { list-style: none; }
   min-height: 300px;
 }
 
-/* ============================================
-   STATS BAR
-   ============================================ */
 .stats-bar {
   background: var(--navy);
   color: #fff;
@@ -1325,9 +1244,6 @@ ul { list-style: none; }
   font-weight: 500;
 }
 
-/* ============================================
-   TESTIMONIAL
-   ============================================ */
 .testimonial-section {
   background: var(--warm-100);
   padding: 5rem 0;
@@ -1374,9 +1290,6 @@ ul { list-style: none; }
   letter-spacing: 0.02em;
 }
 
-/* ============================================
-   LEAD FORM BAND
-   ============================================ */
 .lead-band {
   background: var(--navy);
   color: #fff;
@@ -1432,9 +1345,6 @@ ul { list-style: none; }
 .lead-form select:focus { border-color: var(--gold); }
 .lead-form select option { color: var(--warm-700); background: #fff; }
 
-/* ============================================
-   CTA BAND
-   ============================================ */
 .cta-band {
   background: var(--red);
   color: #fff;
@@ -1469,9 +1379,6 @@ ul { list-style: none; }
   border-color: #fff;
 }
 
-/* ============================================
-   CONTACT FORM
-   ============================================ */
 .form-group { margin-bottom: 1.125rem; }
 .form-group label {
   display: block;
@@ -1522,9 +1429,6 @@ ul { list-style: none; }
 }
 .form-success.show { display: block; }
 
-/* ============================================
-   FAQ ACCORDION
-   ============================================ */
 .faq-list {
   max-width: 740px;
   margin: 0 auto;
@@ -1573,9 +1477,6 @@ ul { list-style: none; }
   line-height: 1.75;
 }
 
-/* ============================================
-   PROTECTION PLANS
-   ============================================ */
 .plans-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1644,9 +1545,6 @@ ul { list-style: none; }
 }
 .plan-card ul li i { color: var(--gold); flex-shrink: 0; font-size: 0.75rem; }
 
-/* ============================================
-   SERVICE DETAIL (inner pages)
-   ============================================ */
 .service-detail-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1687,9 +1585,6 @@ ul { list-style: none; }
   line-height: 1.6;
 }
 
-/* ============================================
-   PARTNERSHIP BOX
-   ============================================ */
 .partnership-box {
   background: #fff;
   border: 2px solid var(--warm-200);
@@ -1718,9 +1613,6 @@ ul { list-style: none; }
   line-height: 1.65;
 }
 
-/* ============================================
-   VALUES (about page)
-   ============================================ */
 .values-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1754,9 +1646,6 @@ ul { list-style: none; }
 .value-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
 .value-card p { color: var(--warm-500); font-size: 0.875rem; line-height: 1.65; }
 
-/* ============================================
-   STEPS / FINANCING
-   ============================================ */
 .steps-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -1784,9 +1673,6 @@ ul { list-style: none; }
 .step-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
 .step-card p { color: var(--warm-500); font-size: 0.875rem; }
 
-/* ============================================
-   BENEFITS
-   ============================================ */
 .benefits-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1807,9 +1693,6 @@ ul { list-style: none; }
 .benefit-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
 .benefit-card p { color: var(--warm-500); font-size: 0.875rem; }
 
-/* ============================================
-   INFO BOX
-   ============================================ */
 .info-box {
   background: #fff;
   border-radius: 2px;
@@ -1819,9 +1702,6 @@ ul { list-style: none; }
 .info-box h3 { font-size: 1.375rem; margin-bottom: 0.75rem; }
 .info-box p { color: var(--warm-500); font-size: 0.9375rem; line-height: 1.75; }
 
-/* ============================================
-   TWO-COL / MAP
-   ============================================ */
 .two-col {
   display: grid;
   grid-template-columns: 1fr;
@@ -1837,9 +1717,6 @@ ul { list-style: none; }
 .map-wrap iframe { width: 100%; height: 280px; border: 0; }
 @media (min-width: 768px) { .map-wrap iframe { height: 360px; } }
 
-/* ============================================
-   FOOTER
-   ============================================ */
 .site-footer {
   background: var(--navy-deep);
   color: var(--warm-400);
@@ -1925,9 +1802,6 @@ ul { list-style: none; }
   .footer-bottom { flex-direction: row; justify-content: space-between; }
 }
 
-/* ============================================
-   MOBILE CALL BAR
-   ============================================ */
 .mobile-call-bar {
   display: none;
   position: fixed;
@@ -1954,9 +1828,6 @@ ul { list-style: none; }
   letter-spacing: 0.01em;
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
 .fade-in {
   opacity: 0;
   transform: translateY(12px);
@@ -1984,9 +1855,6 @@ ul { list-style: none; }
   html { scroll-behavior: auto; }
 }
 
-/* ============================================
-   INDUSTRIAL GRID OVERLAY
-   ============================================ */
 .industrial-grid {
   position: relative;
 }
@@ -2003,33 +1871,21 @@ ul { list-style: none; }
   z-index: 0;
 }
 
-/* Warm/Cool tints (for section backgrounds) */
 .warm-tint { background-image: linear-gradient(135deg, rgba(184, 29, 34, 0.03), transparent); }
 .cool-tint { background-image: linear-gradient(135deg, rgba(27, 41, 86, 0.03), transparent); }
 
-/* ============================================
-   RESPONSIVE — MOBILE-FIRST OVERHAUL
-   ============================================ */
-
-/* --- Hide top bar on all phones/tablets --- */
 @media (max-width: 767px) {
   .top-bar { display: none !important; }
 }
 
-/* ============================================
-   ALL PHONES (max 899px)
-   ============================================ */
 @media (max-width: 899px) {
 
-  /* --- Global spacing --- */
   .section-padding { padding: 3.5rem 0; }
 
-  /* --- Nav tighten --- */
   :root { --nav-h: 66px; }
   .nav-logo img { height: 40px; }
   .nav-wrap.scrolled .nav-logo img { height: 36px; }
 
-  /* --- HERO — redesigned for mobile --- */
   .hero {
     min-height: auto;
     align-items: flex-start;
@@ -2060,14 +1916,12 @@ ul { list-style: none; }
     color: rgba(255,255,255,0.4);
   }
 
-  /* Credential — tuck under buttons */
   .hero-credential {
     font-size: 0.625rem;
     margin-top: 0.75rem;
     padding-bottom: 1.25rem;
   }
 
-  /* Hero buttons — compact side by side */
   .hero-actions {
     gap: 0.5rem;
   }
@@ -2077,7 +1931,6 @@ ul { list-style: none; }
     letter-spacing: 0.03em;
   }
 
-  /* Hero service links — tight single strip */
   .hero-services-row {
     flex-wrap: wrap;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -2095,18 +1948,15 @@ ul { list-style: none; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  /* --- Page hero (inner pages) --- */
   .page-hero { padding: 2.25rem 0 1.75rem; }
   .page-hero h1 { font-size: clamp(1.5rem, 6vw, 2.25rem); }
 
-  /* --- Section headings --- */
   .section-heading { margin-bottom: 2rem; }
   .section-heading h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
   .section-heading p { font-size: 0.875rem; line-height: 1.6; }
   .section-heading--left { margin-bottom: 1.75rem; }
   .section-heading--left h2 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
 
-  /* --- Service tiles (home page grid) --- */
   .service-tile {
     padding: 1.5rem 1.25rem;
     min-height: auto;
@@ -2115,7 +1965,6 @@ ul { list-style: none; }
   .service-tile > p { font-size: 0.8125rem; margin-bottom: 1rem; line-height: 1.55; }
   .service-tile-arrow { width: 30px; height: 30px; font-size: 0.625rem; }
 
-  /* --- Service highlight cards --- */
   .service-highlight {
     padding: 1.125rem 1rem;
     gap: 0.75rem;
@@ -2128,7 +1977,6 @@ ul { list-style: none; }
   .service-highlight .service-tile-arrow { width: 28px; height: 28px; font-size: 0.5625rem; }
   .services-bottom-row { margin-top: 0.75rem; gap: 0.75rem; }
 
-  /* --- Why strip --- */
   .why-strip { gap: 0; }
   .why-strip-item {
     padding: 1rem 0;
@@ -2138,17 +1986,14 @@ ul { list-style: none; }
   .why-strip-item h3 { font-size: 0.9375rem; margin-bottom: 0.25rem; }
   .why-strip-item p { font-size: 0.8125rem; line-height: 1.55; }
 
-  /* --- Stats bar --- */
   .stats-bar { padding: 2rem 0; }
   .stats-bar .container,
   .stats-grid { gap: 1rem; }
   .stat-item .stat-number { font-size: 2rem; margin-bottom: 0.25rem; }
   .stat-item .stat-label { font-size: 0.5625rem; letter-spacing: 0.1em; }
 
-  /* --- Photo break --- */
   .photo-break { height: 200px; }
 
-  /* --- Testimonial --- */
   .testimonial-section { padding: 2.5rem 0; }
   .testimonial-section .stars,
   .testimonial-stars { font-size: 0.875rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
@@ -2162,7 +2007,6 @@ ul { list-style: none; }
   .testimonial-section cite,
   .testimonial-card cite { font-size: 0.8125rem; }
 
-  /* --- Lead form band --- */
   .lead-band { padding: 2.5rem 0; }
   .lead-band h2 { font-size: clamp(1.25rem, 5vw, 1.625rem); margin-bottom: 0.375rem; }
   .lead-band p { font-size: 0.8125rem; margin-bottom: 1.25rem; }
@@ -2174,30 +2018,25 @@ ul { list-style: none; }
   }
   .lead-form .btn { padding: 0.75rem 1.25rem; }
 
-  /* --- CTA band --- */
   .cta-band { padding: 2.5rem 0; }
   .cta-band h2 { font-size: clamp(1.25rem, 5vw, 1.625rem); }
   .cta-band p { font-size: 0.8125rem; margin-bottom: 1.25rem; }
   .cta-band .btn + .btn { margin-left: 0; }
 
-  /* --- Plan cards --- */
   .plan-card { padding: 1.75rem 1.25rem; }
   .plan-card .plan-icon { font-size: 1.5rem; margin-bottom: 0.875rem; }
   .plan-card h3 { font-size: 1.125rem; }
   .plan-card ul { margin-bottom: 1.25rem; }
   .plan-card ul li { font-size: 0.8125rem; padding: 0.3rem 0; }
 
-  /* --- Service detail grid --- */
   .service-detail-item { padding: 1.125rem; gap: 0.625rem; }
   .service-detail-item i { font-size: 1rem; }
   .service-detail-item h4 { font-size: 0.875rem; }
   .service-detail-item p { font-size: 0.75rem; line-height: 1.55; }
 
-  /* --- FAQ --- */
   .faq-question { font-size: 0.9375rem; padding: 1rem 0; }
   .faq-answer-inner { font-size: 0.8125rem; padding-bottom: 1rem; }
 
-  /* --- Benefits / values --- */
   .benefit-card { padding: 1.5rem 1.25rem; }
   .benefit-card i { font-size: 1.375rem; margin-bottom: 0.75rem; }
   .benefit-card h3 { font-size: 1rem; }
@@ -2206,23 +2045,19 @@ ul { list-style: none; }
   .value-card h3 { font-size: 1rem; }
   .value-card p { font-size: 0.8125rem; }
 
-  /* --- Steps --- */
   .step-card { padding: 1rem 0.5rem; }
   .step-number { width: 44px; height: 44px; font-size: 1.125rem; margin-bottom: 1rem; }
   .step-card h3 { font-size: 1rem; }
   .step-card p { font-size: 0.8125rem; }
 
-  /* --- Info box --- */
   .info-box { padding: 1.5rem; }
   .info-box h3 { font-size: 1.125rem; }
   .info-box p { font-size: 0.875rem; }
   .info-box table { font-size: 0.875rem; }
 
-  /* --- Partnership box --- */
   .partnership-box { padding: 1.25rem; gap: 0.75rem; }
   .partnership-box p { font-size: 0.8125rem; }
 
-  /* --- Marquee --- */
   .marquee-section { padding: 1.5rem 0; }
   .marquee-label { font-size: 0.5625rem; margin-bottom: 1rem; letter-spacing: 0.18em; }
   .marquee-track { gap: 2.5rem; }
@@ -2232,19 +2067,14 @@ ul { list-style: none; }
     mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
   }
 
-  /* --- Two-col --- */
   .two-col { gap: 2rem; }
 
-  /* --- Area tags --- */
   .area-tag { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
 
-  /* --- Prose --- */
   .prose p { font-size: 0.9375rem; line-height: 1.7; }
 
-  /* --- Map --- */
   .map-wrap iframe { height: 240px; }
 
-  /* --- Footer --- */
   .footer-grid { padding: 2.5rem 0 2rem; gap: 1.75rem; }
   .footer-brand img { height: 36px; }
   .footer-brand p { font-size: 0.75rem; line-height: 1.6; margin-bottom: 0.875rem; }
@@ -2254,10 +2084,8 @@ ul { list-style: none; }
   .footer-col .contact-item { font-size: 0.75rem; margin-bottom: 0.625rem; }
   .footer-bottom { padding: 1rem 0; font-size: 0.6875rem; }
 
-  /* --- Breadcrumb --- */
   .breadcrumb { font-size: 0.75rem; }
 
-  /* --- Form inputs (prevent iOS zoom) --- */
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -2265,15 +2093,11 @@ ul { list-style: none; }
     padding: 0.75rem 0.875rem;
   }
 
-  /* --- Service page images --- */
   .service-overview-img img { min-height: 200px; }
   .about-photo-wrap img { min-height: 200px; }
   .about-logo-wrap img { max-width: 240px; padding: 1.5rem; }
 }
 
-/* ============================================
-   TABLET PORTRAIT (600px - 767px)
-   ============================================ */
 @media (min-width: 600px) and (max-width: 767px) {
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
   .service-detail-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2282,9 +2106,6 @@ ul { list-style: none; }
   .steps-row { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ============================================
-   TABLET (768px - 1023px)
-   ============================================ */
 @media (min-width: 768px) and (max-width: 1023px) {
   .why-strip { grid-template-columns: repeat(2, 1fr); }
   .why-strip-item { padding: 0.5rem 1.5rem; }
@@ -2300,9 +2121,6 @@ ul { list-style: none; }
   .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
-/* ============================================
-   CONTACT PAGE HELPERS
-   ============================================ */
 .contact-form-wrap {
   background: #fff;
   border: 2px solid var(--warm-200);
@@ -2347,9 +2165,6 @@ ul { list-style: none; }
   word-break: break-word;
 }
 
-/* ============================================
-   ABOUT PAGE PARTNERSHIP GRID
-   ============================================ */
 .partnerships-stack {
   display: grid;
   grid-template-columns: 1fr;
@@ -2358,9 +2173,6 @@ ul { list-style: none; }
   margin: 0 auto;
 }
 
-/* ============================================
-   DESKTOP POLISH (1024px+)
-   ============================================ */
 @media (min-width: 1024px) {
   .services-grid-v2 { border-radius: 2px; }
   .nav-links { gap: 0.25rem; }
@@ -2375,18 +2187,12 @@ ul { list-style: none; }
   .hero h1 { letter-spacing: -0.025em; }
 }
 
-/* Dividers (kept for compatibility) */
 .divider-top, .divider-bottom { position: absolute; left: 0; width: 100%; overflow: hidden; line-height: 0; }
 .divider-top { top: -1px; }
 .divider-bottom { bottom: -1px; }
 .divider-top svg, .divider-bottom svg { display: block; width: calc(100% + 1.3px); position: relative; }
 .divider-bottom svg { transform: rotate(180deg); }
 
-/* ============================================================================
-   PRODUCTION POLISH — appended for v1.0 launch
-   ============================================================================ */
-
-/* --- Accessibility: skip link --- */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -2407,7 +2213,6 @@ ul { list-style: none; }
   outline-offset: 2px;
 }
 
-/* --- Focus-visible (keyboard navigation) --- */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -2422,7 +2227,6 @@ textarea:focus-visible,
   outline-offset: 4px;
 }
 
-/* --- Footer legal row --- */
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -2451,7 +2255,6 @@ textarea:focus-visible,
   opacity: 0.6;
 }
 
-/* --- Sticky scroll-to-top button --- */
 .scroll-top {
   position: fixed;
   right: 1.25rem;
@@ -2483,13 +2286,12 @@ textarea:focus-visible,
 @media (max-width: 600px) {
   .scroll-top {
     right: 1rem;
-    bottom: 5rem; /* avoid mobile-call-bar */
+    bottom: 5rem;
     width: 40px;
     height: 40px;
   }
 }
 
-/* --- 404 page --- */
 .error-hero {
   background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy) 100%);
   color: #fff;
@@ -2542,7 +2344,6 @@ textarea:focus-visible,
   justify-content: center;
 }
 
-/* 404 simple service cards (distinct from .service-highlight) */
 .service-bottom-card {
   display: block;
   background: #fff;
@@ -2582,7 +2383,6 @@ textarea:focus-visible,
 }
 .service-bottom-card:hover .service-tile-arrow { transform: translateX(4px); }
 
-/* --- Thank-you page --- */
 .thank-you-hero {
   background: linear-gradient(180deg, var(--warm-100) 0%, var(--cream) 100%);
   padding: clamp(4rem, 10vw, 7rem) 0;
@@ -2593,7 +2393,7 @@ textarea:focus-visible,
   margin: 0 auto;
 }
 .thank-you-mark {
-  color: #2F7D3F; /* trustworthy green, single-use */
+  color: #2F7D3F;
   margin-bottom: 1.5rem;
   display: inline-flex;
 }
@@ -2615,7 +2415,6 @@ textarea:focus-visible,
   justify-content: center;
 }
 
-/* --- Legal docs (privacy / terms) --- */
 .legal-doc {
   max-width: 760px;
   margin: 0 auto;
@@ -2659,7 +2458,6 @@ textarea:focus-visible,
   margin-bottom: 2rem;
 }
 
-/* --- Trust badges row (home hero) --- */
 .trust-row {
   background: var(--navy);
   color: rgba(255, 255, 255, 0.78);
@@ -2695,8 +2493,6 @@ textarea:focus-visible,
   .trust-item .trust-sep { display: none; }
 }
 
-/* --- Testimonial grid (3 testimonials) --- */
-/* Wide container override when a testimonial grid is present */
 .testimonial-section .testimonial-grid,
 .testimonial-section .section-heading--left {
   max-width: none;
@@ -2789,7 +2585,6 @@ textarea:focus-visible,
   margin-bottom: 0.125rem;
 }
 
-/* --- Process strip (about page "How we work") --- */
 .process-strip {
   display: grid;
   grid-template-columns: 1fr;
@@ -2829,7 +2624,6 @@ textarea:focus-visible,
   color: var(--warm-600);
 }
 
-/* --- Form error state --- */
 .form-error {
   display: none;
   margin-top: 1rem;
@@ -2843,7 +2637,6 @@ textarea:focus-visible,
 .form-error.show { display: block; }
 .form-error i { margin-right: 0.4rem; }
 
-/* Honeypot — always hidden */
 .hp-field {
   position: absolute !important;
   left: -10000px !important;
@@ -2852,13 +2645,11 @@ textarea:focus-visible,
   overflow: hidden !important;
 }
 
-/* --- Utility classes --- */
 .u-mb-sm { margin-bottom: 0.75rem !important; }
 .u-mb-md { margin-bottom: 1.5rem !important; }
 .u-mb-lg { margin-bottom: 2.5rem !important; }
 .text-muted { color: var(--warm-500) !important; }
 
-/* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -2870,11 +2661,6 @@ textarea:focus-visible,
   .fade-in { opacity: 1 !important; transform: none !important; }
 }
 
-/* End production polish */
-
-/* ============================================================================
-   MAINTENANCE PRICING CARD (protection-plans page)
-   ============================================================================ */
 .pricing-band {
   position: relative;
   background: var(--warm-100);
@@ -3044,11 +2830,6 @@ textarea:focus-visible,
   .pricing-fineprint { padding: 0 1.5rem 1.5rem; }
 }
 
-/* End maintenance pricing card */
-
-/* ============================================================================
-   PROMOTIONS SECTION (home)
-   ============================================================================ */
 .promos-section {
   position: relative;
   padding: clamp(4rem, 8vw, 6rem) 0;
@@ -3119,7 +2900,6 @@ textarea:focus-visible,
   .promos-grid { grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: stretch; }
 }
 
-/* Featured promo (left, larger) */
 .promo-card {
   position: relative;
   background: #fff;
@@ -3320,39 +3100,27 @@ textarea:focus-visible,
   .promo-actions { gap: 0.75rem; }
 }
 
-/* End promotions */
-
-/* ============================================================================
-   MOBILE REDESIGN — Premium mobile experience (≤ 899px)
-   This block lives at the end so it cleanly overrides earlier mobile rules.
-   ============================================================================ */
 @media (max-width: 899px) {
 
-  /* ---------- Global rhythm ---------- */
   :root { --nav-h: 64px; }
   .section-padding { padding: 3rem 0; }
   .container { padding: 0 1.25rem; }
 
-  /* Disable expensive blur on mobile for smoother scroll */
   .nav-wrap {
     backdrop-filter: blur(12px) saturate(1.1);
     -webkit-backdrop-filter: blur(12px) saturate(1.1);
     border-top-width: 3px;
   }
 
-  /* Tighter, premium nav */
   .nav-inner { height: var(--nav-h); }
   .nav-logo img { height: 36px; }
   .nav-wrap.scrolled .nav-logo img { height: 32px; }
   .hamburger { width: 24px; height: 40px; }
 
-  /* ============================================
-     HERO — completely redesigned for mobile
-     ============================================ */
   .hero {
     min-height: auto;
     align-items: stretch;
-    /* Richer background — adds a top-glow + deeper bottom */
+
     background-image:
       radial-gradient(ellipse 90% 60% at 70% 0%, rgba(196, 43, 43, 0.18) 0%, transparent 60%),
       radial-gradient(ellipse 80% 50% at 0% 100%, rgba(212, 162, 69, 0.06) 0%, transparent 60%),
@@ -3361,7 +3129,6 @@ textarea:focus-visible,
   .hero-content { padding: 1.75rem 0 0; gap: 0; }
   .hero-text { padding-bottom: 1.5rem; max-width: 100%; }
 
-  /* Eyebrow chip — more premium with gold dot */
   .hero-label {
     display: inline-flex;
     align-items: center;
@@ -3388,7 +3155,6 @@ textarea:focus-visible,
     50%      { box-shadow: 0 0 0 6px rgba(196, 43, 43, 0.0); }
   }
 
-  /* Headline — bigger, tighter, with brand accent on key word */
   .hero h1 {
     font-size: clamp(2.125rem, 9vw, 2.875rem);
     line-height: 1.05;
@@ -3398,7 +3164,6 @@ textarea:focus-visible,
     text-wrap: balance;
   }
 
-  /* Subtitle — readable, not greyed out */
   .hero-subtitle {
     font-size: 0.9375rem;
     line-height: 1.6;
@@ -3407,7 +3172,6 @@ textarea:focus-visible,
     max-width: 100%;
   }
 
-  /* CTAs — primary + outlined phone, both feel premium and tappable */
   .hero-actions {
     display: flex;
     flex-direction: column;
@@ -3437,7 +3201,6 @@ textarea:focus-visible,
     font-size: 0.875rem;
   }
 
-  /* Credential micro-line — slightly brighter, with separator dot */
   .hero-credential {
     margin-top: 0.75rem;
     font-size: 0.6875rem;
@@ -3446,7 +3209,6 @@ textarea:focus-visible,
     padding-bottom: 1.5rem;
   }
 
-  /* Service strip — clean 3-up grid with vertical separators and icon stack */
   .hero-services-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -3481,9 +3243,6 @@ textarea:focus-visible,
     color: #fff;
   }
 
-  /* ============================================
-     TRUST ROW — premium 2×2 grid with iconography
-     ============================================ */
   .trust-row {
     padding: 1.25rem 1rem;
     background: var(--navy);
@@ -3518,9 +3277,6 @@ textarea:focus-visible,
     flex-shrink: 0;
   }
 
-  /* ============================================
-     MARQUEE — better edges, breathable, larger
-     ============================================ */
   .marquee-section {
     padding: 1.75rem 0;
     background: var(--warm-100);
@@ -3532,7 +3288,7 @@ textarea:focus-visible,
     color: var(--warm-500);
   }
   .marquee {
-    /* Stronger edge fade so logos don't get awkwardly clipped */
+
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
   }
@@ -3542,9 +3298,6 @@ textarea:focus-visible,
     opacity: 0.55;
   }
 
-  /* ============================================
-     SECTION HEADINGS — left bar, tighter
-     ============================================ */
   .section-heading,
   .section-heading--left { margin-bottom: 1.75rem; text-align: left; }
   .section-heading h2,
@@ -3559,9 +3312,6 @@ textarea:focus-visible,
   }
   .section-heading p { font-size: 0.9375rem; line-height: 1.6; max-width: 100%; }
 
-  /* ============================================
-     SERVICES — refined tiles
-     ============================================ */
   .services-grid-v2 {
     border: 1px solid var(--warm-200);
     border-radius: 6px;
@@ -3607,7 +3357,6 @@ textarea:focus-visible,
     color: var(--warm-600);
   }
 
-  /* Service highlight pair (Annual Maintenance / Emergency) */
   .services-bottom-row { margin-top: 0.75rem; gap: 0.625rem; }
   .service-highlight {
     padding: 1.125rem 1.125rem;
@@ -3636,9 +3385,6 @@ textarea:focus-visible,
     font-size: 0.625rem;
   }
 
-  /* ============================================
-     WHY STRIP — divider list with numbered accents
-     ============================================ */
   .why-strip { gap: 0; }
   .why-strip-item {
     padding: 1.125rem 0 1.125rem 0;
@@ -3659,9 +3405,6 @@ textarea:focus-visible,
     color: var(--warm-500);
   }
 
-  /* ============================================
-     STATS — bigger numbers, divider grid
-     ============================================ */
   .stats-bar {
     padding: 2.5rem 0;
     border-top-width: 3px;
@@ -3703,14 +3446,8 @@ textarea:focus-visible,
     color: rgba(255, 255, 255, 0.6);
   }
 
-  /* ============================================
-     PHOTO BREAK — slimmer
-     ============================================ */
   .photo-break { height: 220px; }
 
-  /* ============================================
-     TESTIMONIALS — card-style on mobile
-     ============================================ */
   .testimonial-section { padding: 3rem 0; }
   .testimonial-grid { gap: 1rem; }
   .testimonial-section .testimonial-quote {
@@ -3744,9 +3481,6 @@ textarea:focus-visible,
     font-size: 0.875rem;
   }
 
-  /* ============================================
-     PROMOS — tighter, premium featured card
-     ============================================ */
   .promos-section { padding: 3rem 0; }
   .promos-header { margin-bottom: 1.5rem; }
   .promos-eyebrow { font-size: 0.6875rem; margin-bottom: 0.625rem; }
@@ -3786,9 +3520,6 @@ textarea:focus-visible,
   .promo-code { font-size: 0.6875rem; }
   .promos-fineprint { font-size: 0.6875rem; margin-top: 1.5rem; }
 
-  /* ============================================
-     LEAD FORM — premium dark band
-     ============================================ */
   .lead-band { padding: 3rem 0; }
   .lead-band h2 { font-size: clamp(1.5rem, 6vw, 1.875rem); }
   .lead-band p { font-size: 0.9375rem; margin-bottom: 1.5rem; }
@@ -3809,9 +3540,6 @@ textarea:focus-visible,
     border-radius: 4px;
   }
 
-  /* ============================================
-     FOOTER — refined mobile stacking
-     ============================================ */
   .site-footer { border-top-width: 3px; }
   .footer-grid {
     padding: 2.5rem 0 1.75rem;
@@ -3847,9 +3575,6 @@ textarea:focus-visible,
     width: 100%;
   }
 
-  /* ============================================
-     MOBILE CALL BAR — premium fixed CTA
-     ============================================ */
   body { padding-bottom: 64px; padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
   .mobile-call-bar {
     background: linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
@@ -3890,14 +3615,10 @@ textarea:focus-visible,
     .hero-label::before { animation: none; }
   }
 
-  /* Lift scroll-top above call bar with safe-area awareness */
   .scroll-top {
     bottom: calc(72px + env(safe-area-inset-bottom));
   }
 
-  /* ============================================
-     MOBILE MENU — premium drawer feel
-     ============================================ */
   .mobile-menu {
     background: #fff;
     border-top: 1px solid var(--warm-200);
@@ -3913,9 +3634,6 @@ textarea:focus-visible,
   .mobile-menu a:hover,
   .mobile-menu a:active { background: var(--warm-100); }
 
-  /* ============================================
-     INNER PAGE HEROES
-     ============================================ */
   .page-hero { padding: 2rem 0 1.5rem; }
   .page-hero h1 {
     font-size: clamp(1.625rem, 7vw, 2.25rem);
@@ -3924,9 +3642,6 @@ textarea:focus-visible,
   .page-hero-sub { font-size: 0.9375rem; }
   .breadcrumb { font-size: 0.75rem; }
 
-  /* ============================================
-     FORMS — bigger touch targets, premium feel
-     ============================================ */
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -3938,21 +3653,12 @@ textarea:focus-visible,
   .form-group textarea { min-height: 120px; }
   .contact-form-wrap { padding: 1.5rem 1.25rem; border-radius: 6px; }
 
-  /* ============================================
-     PLAN CARDS
-     ============================================ */
   .plan-card { padding: 1.75rem 1.5rem; border-radius: 6px; }
   .plan-card h3 { font-size: 1.25rem; }
 
-  /* ============================================
-     FAQ
-     ============================================ */
   .faq-question { font-size: 0.9375rem; padding: 1.125rem 0; min-height: 56px; }
   .faq-answer-inner { font-size: 0.875rem; line-height: 1.65; padding-bottom: 1.125rem; }
 
-  /* ============================================
-     AREA TAGS
-     ============================================ */
   .area-tag {
     padding: 0.4rem 0.875rem;
     font-size: 0.75rem;
@@ -3962,7 +3668,6 @@ textarea:focus-visible,
   }
 }
 
-/* ----- Smaller phones (≤ 380px) ----- */
 @media (max-width: 380px) {
   .container { padding: 0 1rem; }
   .hero h1 { font-size: 1.875rem; }
@@ -3974,11 +3679,6 @@ textarea:focus-visible,
   .promo-card--featured h3 { font-size: 1.25rem; }
 }
 
-/* End mobile redesign */
-
-/* ============================================================================
-   FINANCING PAGE
-   ============================================================================ */
 .finance-overview { align-items: center; }
 
 .finance-figure {
@@ -4058,7 +3758,6 @@ textarea:focus-visible,
   .finance-figure { padding: 1.75rem; }
 }
 
-/* Shared CTA action row (replaces per-page inline flex styles) */
 .cta-actions {
   display: flex;
   flex-wrap: wrap;
@@ -4067,10 +3766,6 @@ textarea:focus-visible,
 }
 .cta-band .cta-actions .btn + .btn { margin-left: 0; }
 
-/* ============================================================================
-   VISUAL POLISH (site-wide, additive)
-   ============================================================================ */
-/* Hero — extra depth + better text contrast on desktop */
 @media (min-width: 900px) {
   .hero-bg-pattern::after {
     content: '';
@@ -4086,7 +3781,6 @@ textarea:focus-visible,
   }
 }
 
-/* Partnership boxes — gentle lift so they don't read as flat slabs */
 .partnership-box {
   transition: border-color 300ms var(--ease), box-shadow 300ms var(--ease), transform 300ms var(--ease);
 }
@@ -4095,46 +3789,31 @@ textarea:focus-visible,
   box-shadow: 0 10px 30px rgba(26, 30, 46, 0.07);
   transform: translateY(-2px);
 }
-/* End financing + polish */
 
-/* ============================================================================
-   TEXT CONTRAST PASS — lift low-visibility text on dark backgrounds
-   (applies at all breakpoints; deliberately placed last so it wins)
-   ============================================================================ */
-
-/* Inner-page hero subtitle — was dark grey (--warm-600) on navy */
 .page-hero-sub { color: rgba(255, 255, 255, 0.82); }
 
-/* Top info bar */
 .top-bar,
 .top-bar a { color: rgba(255, 255, 255, 0.72); }
 
-/* Home hero */
 .hero-label { color: rgba(255, 255, 255, 0.72); }
 .hero-subtitle { color: rgba(255, 255, 255, 0.78); }
 .hero-credential { color: rgba(255, 255, 255, 0.62); }
 .hero-service-link { color: rgba(255, 255, 255, 0.78); }
 
-/* Breadcrumbs over dark page heroes */
 .breadcrumb { color: rgba(255, 255, 255, 0.7); }
 .breadcrumb a { color: rgba(255, 255, 255, 0.7); }
 .breadcrumb a:hover { color: #fff; }
 
-/* Stat labels on the navy stats bar */
 .stat-item .stat-label { color: rgba(255, 255, 255, 0.72); }
 
-/* Dark lead-capture band */
 .lead-band > .container > p,
 .lead-band p { color: rgba(255, 255, 255, 0.78); }
 .lead-form input::placeholder { color: rgba(255, 255, 255, 0.6); }
 
-/* Emergency highlight tile (navy) */
 .service-highlight--emergency p { color: rgba(255, 255, 255, 0.72); }
 
-/* Example-payment figure fine print (navy gradient) */
 .finance-figure-note { color: rgba(255, 255, 255, 0.64); }
 
-/* Footer — lift body copy, links and legal off the dark navy */
 .site-footer { color: var(--warm-300); }
 .footer-brand p { color: var(--warm-300); }
 .footer-col ul li a { color: var(--warm-300); }
@@ -4147,13 +3826,7 @@ textarea:focus-visible,
 .footer-legal a { color: var(--warm-300); }
 .footer-legal a:hover { color: #fff; }
 .footer-legal .sep { color: var(--warm-400); }
-/* End contrast pass */
 
-/* ============================================================================
-   DESKTOP NAV WIDTH — let the header span the full viewport so the logo sits
-   near the left edge and the menu near the right edge, instead of clustering
-   in the centered 1200px container. Page content stays contained.
-   ============================================================================ */
 @media (min-width: 1024px) {
   .nav-wrap .container,
   .top-bar .container {
@@ -4161,7 +3834,6 @@ textarea:focus-visible,
     padding-left: clamp(1.5rem, 5vw, 5rem);
     padding-right: clamp(1.5rem, 5vw, 5rem);
   }
-  /* a little more breathing room between menu items */
+
   .nav-links { gap: 0.5rem; }
 }
-/* End desktop nav width */
