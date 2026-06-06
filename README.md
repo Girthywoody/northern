@@ -59,7 +59,7 @@ local web server is the recommended way to preview.
 ├── robots.txt                  Crawler instructions
 ├── sitemap.xml                 11 indexable URLs
 ├── firebase.json               Firebase Hosting config
-├── CLAUDE.md                   Design guardrails for AI assistance
+├── CLAUDE.md                   Design guardrails & conventions
 └── README.md                   You are here
 ```
 
